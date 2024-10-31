@@ -79,7 +79,7 @@
             background-color: var(--vermelho);
         }
 
-        /* Rodapé com informações de contato dividido em duas partes */
+        /* Rodapé dividido em duas colunas */
         footer {
             background-color: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(2px);
@@ -88,13 +88,13 @@
             border-radius: 10px;
             margin: 20px;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            text-align: center;
+            text-align: left;
         }
 
         .footer-contact {
-            margin-bottom: 10px;
+            text-align: left;
         }
 
         .footer-contact h2 {
@@ -124,11 +124,7 @@
         .footer-bottom {
             font-size: 0.9em;
             color: #000;
-            border-top: 1px solid rgba(0, 0, 0, 0.2); /* Linha fina separando o aviso de direitos autorais */
-            padding-top: 10px;
-            width: 100%;
-            text-align: center;
-            margin-top: 10px;
+            text-align: right;
         }
     </style>
 </head>
