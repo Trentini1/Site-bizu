@@ -9,30 +9,65 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #FFFFFF;
+            color: #333;
         }
         header {
-            background-color: #333;
-            color: #fff;
+            background-color: #006699; /* Azul Escuro */
+            color: #FFCC33; /* Amarelo Claro */
             padding: 20px;
             text-align: center;
         }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.2em;
+        }
         section {
             padding: 20px;
+            max-width: 800px;
+            margin: auto;
         }
         .servicos, .marcas {
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-top: 20px;
         }
         .marcas img {
             max-width: 100px;
             margin: 10px;
         }
+        h2 {
+            color: #FF6600; /* Laranja */
+        }
+        .servicos p, .marcas p {
+            font-size: 1.1em;
+            color: #333;
+            text-align: center;
+        }
         footer {
-            background-color: #333;
-            color: #fff;
+            background-color: #CC3333; /* Vermelho */
+            color: #FFFFFF;
             text-align: center;
             padding: 10px;
+            margin-top: 20px;
+        }
+        .button {
+            background-color: #FF6600;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1em;
+            margin-top: 15px;
+        }
+        .button:hover {
+            background-color: #CC3333;
         }
     </style>
 </head>
@@ -55,15 +90,18 @@
 
     <section class="marcas">
         <h2>Marcas</h2>
-        <img src="logo-caterpillar.png" alt="Caterpillar">
-        <img src="logo-cummins.png" alt="Cummins">
-        <img src="logo-volvo.png" alt="Volvo">
-        <img src="logo-mercedes.png" alt="Mercedes">
+        <div>
+            <img src="logo-caterpillar.png" alt="Caterpillar">
+            <img src="logo-cummins.png" alt="Cummins">
+            <img src="logo-volvo.png" alt="Volvo">
+            <img src="logo-mercedes.png" alt="Mercedes">
+        </div>
     </section>
 
     <section>
         <h2>Contato</h2>
         <p>Entre em contato conosco pelo telefone (XX) XXXX-XXXX ou pelo e-mail contato@retiblocos.com.br.</p>
+        <a href="mailto:contato@retiblocos.com.br" class="button">Enviar E-mail</a>
     </section>
 
     <footer>
