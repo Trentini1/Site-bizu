@@ -5,69 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retiblocos - Retífica Diesel Pesado</title>
     <style>
+        /* Definindo a paleta de cores */
+        :root {
+            --azul-escuro: #006699;
+            --laranja: #FF6600;
+            --amarelo-claro: #FFCC33;
+            --vermelho: #CC3333;
+            --branco: #FFFFFF;
+        }
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #FFFFFF;
+            background-color: var(--branco);
             color: #333;
         }
+        
         header {
-            background-color: #006699; /* Azul Escuro */
-            color: #FFCC33; /* Amarelo Claro */
+            background-color: var(--azul-escuro);
+            color: var(--amarelo-claro);
             padding: 20px;
             text-align: center;
         }
+        
         header h1 {
             margin: 0;
             font-size: 2em;
         }
+        
         header p {
             margin: 5px 0 0;
             font-size: 1.2em;
         }
+        
         section {
             padding: 20px;
             max-width: 800px;
             margin: auto;
         }
-        .servicos, .marcas {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-        }
-        .marcas img {
-            max-width: 100px;
-            margin: 10px;
-        }
+        
         h2 {
-            color: #FF6600; /* Laranja */
+            color: var(--laranja);
         }
+        
         .servicos p, .marcas p {
             font-size: 1.1em;
             color: #333;
             text-align: center;
         }
-        footer {
-            background-color: #CC3333; /* Vermelho */
-            color: #FFFFFF;
-            text-align: center;
-            padding: 10px;
+        
+        .marcas {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             margin-top: 20px;
         }
+        
+        .marcas img {
+            max-width: 100px;
+            margin: 10px;
+        }
+        
         .button {
-            background-color: #FF6600;
-            color: #FFFFFF;
+            background-color: var(--laranja);
+            color: var(--branco);
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
             text-decoration: none;
             font-size: 1em;
             margin-top: 15px;
+            display: inline-block;
         }
+        
         .button:hover {
-            background-color: #CC3333;
+            background-color: var(--vermelho);
+        }
+        
+        footer {
+            background-color: var(--vermelho);
+            color: var(--branco);
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
         }
     </style>
 </head>
