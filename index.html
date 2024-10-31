@@ -79,34 +79,56 @@
             background-color: var(--vermelho);
         }
 
-        /* Rodapé com informações de contato */
+        /* Rodapé com informações de contato dividido em duas partes */
         footer {
             background-color: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(2px);
             color: #000;
-            text-align: center;
             padding: 20px;
             border-radius: 10px;
             margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
 
-        footer p, footer ul {
-            margin: 10px 0;
-            color: #000;
+        .footer-contact {
+            margin-bottom: 10px;
         }
 
-        footer ul {
+        .footer-contact h2 {
+            color: var(--laranja);
+            margin-bottom: 10px;
+        }
+
+        .footer-contact ul {
             list-style-type: none;
             padding: 0;
+            margin: 0;
         }
 
-        footer a {
+        .footer-contact ul li {
+            margin: 5px 0;
+        }
+
+        .footer-contact a {
             color: var(--azul-escuro);
             text-decoration: none;
         }
 
-        footer a:hover {
+        .footer-contact a:hover {
             text-decoration: underline;
+        }
+
+        .footer-bottom {
+            font-size: 0.9em;
+            color: #000;
+            border-top: 1px solid rgba(0, 0, 0, 0.2); /* Linha fina separando o aviso de direitos autorais */
+            padding-top: 10px;
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -133,15 +155,19 @@
     </section>
 
     <footer>
-        <h2>Contato</h2>
-        <ul>
-            <li>Fixo: <a href="https://wa.me/554130859910" target="_blank">(41) 3085-9910</a> (Erick, Gerente Adm)</li>
-            <li>Celular: <a href="https://wa.me/5541999741204" target="_blank">(41) 99741-204</a> (Fernando, Proprietário)</li>
-            <li>Email: <a href="mailto:escritorio.retiblocos@hotmail.com">escritorio.retiblocos@hotmail.com</a></li>
-            <li>CNPJ: 53.659.638/0001-03</li>
-        </ul>
-        <a href="mailto:escritorio.retiblocos@hotmail.com" class="button">Enviar E-mail</a>
-        <p>&copy; 2024 Retiblocos. Todos os direitos reservados.</p>
+        <div class="footer-contact">
+            <h2>Contato</h2>
+            <ul>
+                <li>Fixo: <a href="https://wa.me/554130859910" target="_blank">(41) 3085-9910</a> (Erick, Gerente Adm)</li>
+                <li>Celular: <a href="https://wa.me/5541999741204" target="_blank">(41) 99741-204</a> (Fernando, Proprietário)</li>
+                <li>Email: <a href="mailto:escritorio.retiblocos@hotmail.com">escritorio.retiblocos@hotmail.com</a></li>
+                <li>CNPJ: 53.659.638/0001-03</li>
+            </ul>
+            <a href="mailto:escritorio.retiblocos@hotmail.com" class="button">Enviar E-mail</a>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Retiblocos. Todos os direitos reservados.
+        </div>
     </footer>
 
 </body>
