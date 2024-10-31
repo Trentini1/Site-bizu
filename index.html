@@ -15,40 +15,41 @@
             --branco: #FFFFFF;
         }
         
+        /* Fundo do site com imagem e transparência */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--branco);
+            background: url('fundo-site.png') no-repeat center center fixed;
+            background-size: cover;
             color: #333;
+            background-blend-mode: multiply;
+            opacity: 0.8; /* Transparência de 20% */
+        }
+
+        /* Estilos das áreas de conteúdo com desfoque */
+        .content {
+            background-color: rgba(255, 255, 255, 0.7); /* Fundo semi-transparente */
+            backdrop-filter: blur(10px); /* Desfoque */
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
         }
         
         header {
             background-color: var(--azul-escuro);
             color: var(--amarelo-claro);
-            padding: 10px 0; /* Reduzido o padding para diminuir a altura do cabeçalho */
+            padding: 10px 0;
             text-align: center;
         }
         
         header img {
-            max-width: 500px; /* Aumenta o tamanho da logo */
+            max-width: 500px;
             height: auto;
-        }
-        
-        section {
-            padding: 20px;
-            max-width: 800px;
-            margin: auto;
         }
         
         h2 {
             color: var(--laranja);
-        }
-        
-        .servicos p, .marcas p {
-            font-size: 1.1em;
-            color: #333;
-            text-align: center;
         }
         
         .marcas {
@@ -91,22 +92,22 @@
 </head>
 <body>
 
-    <header>
+    <header class="content">
         <img src="logo-retiblocos.png" alt="Retiblocos - Retífica Diesel Pesado">
         <p>Especialistas em Retífica Diesel Pesado - Caterpillar, Cummins, Volvo e Mercedes</p>
     </header>
 
-    <section>
+    <section class="content">
         <h2>Sobre Nós</h2>
         <p>A Retiblocos está no mercado desde 2007, especializada em retífica de motores diesel pesado. Atendemos desde motores de geradores a caminhões, com ampla experiência em marcas renomadas como Caterpillar, Cummins, Volvo e Mercedes.</p>
     </section>
 
-    <section class="servicos">
+    <section class="content">
         <h2>Serviços</h2>
         <p>Oferecemos serviços de retífica completa, reparos em motores, manutenção preventiva e corretiva, e muito mais.</p>
     </section>
 
-    <section class="marcas">
+    <section class="marcas content">
         <h2>Marcas</h2>
         <div>
             <img src="logo-caterpillar.png" alt="Caterpillar">
@@ -116,7 +117,7 @@
         </div>
     </section>
 
-    <section>
+    <section class="content">
         <h2>Contato</h2>
         <p>Entre em contato conosco:</p>
         <ul>
@@ -128,7 +129,7 @@
         <a href="mailto:escritorio.retiblocos@hotmail.com" class="button">Enviar E-mail</a>
     </section>
 
-    <footer>
+    <footer class="content">
         <div>
             <p>Contato: <a href="mailto:escritorio.retiblocos@hotmail.com" style="color: var(--branco);">escritorio.retiblocos@hotmail.com</a> | (41) 3085-9910 | (41) 99741-204</p>
         </div>
