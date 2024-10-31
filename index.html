@@ -29,8 +29,8 @@
 
         /* Estilos de áreas de conteúdo */
         .content, .cta {
-            background-color: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(3px);
+            background-color: rgba(255, 255, 255, 0.4); /* Desfoque mais transparente */
+            backdrop-filter: blur(5px);
             border-radius: 10px;
             padding: 20px 30px;
             margin: 20px auto;
@@ -45,7 +45,7 @@
 
         /* Logo e cabeçalho */
         .header-compact {
-            background-color: rgba(255, 255, 255, 0.5);
+            background-color: rgba(255, 255, 255, 0.4); /* Desfoque mais transparente */
             padding: 10px 20px;
             max-width: 100%;
             margin: 0 auto;
@@ -54,7 +54,7 @@
 
         .header-compact img {
             width: 100%;
-            max-width: 500px; /* Define o tamanho máximo da logo */
+            max-width: 500px;
             height: auto;
             display: block;
             margin: auto;
@@ -75,17 +75,22 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
+            margin-top: 20px;
         }
 
         .marcas img {
-            max-width: 120px; /* Define um tamanho máximo para as imagens das marcas */
+            max-width: 120px;
             height: auto;
-            transition: transform 0.3s;
             cursor: pointer;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
         }
 
+        /* Efeito de giro e aumento ao passar o mouse */
         .marcas img:hover {
-            transform: scale(1.1);
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
         }
 
         /* Botão de contato */
@@ -176,7 +181,7 @@
 
         /* Rodapé */
         footer {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 255, 255, 0.4); /* Desfoque mais transparente */
             color: #000;
             padding: 20px;
             border-radius: 10px;
