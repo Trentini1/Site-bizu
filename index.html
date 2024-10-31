@@ -28,19 +28,12 @@
 
         /* Estilos das áreas de conteúdo com leve desfoque */
         .content {
-            background-color: rgba(255, 255, 255, 0.6); /* Fundo semi-transparente */
-            backdrop-filter: blur(2px); /* Desfoque bem leve */
+            background-color: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(2px);
             border-radius: 10px;
             padding: 10px 15px;
             margin: 20px;
             color: #000;
-            transition: transform 0.2s ease, opacity 0.2s ease;
-            will-change: transform, opacity;
-        }
-        
-        .content:hover {
-            transform: scale(1.02); /* Efeito leve de zoom ao passar o mouse */
-            opacity: 1;
         }
 
         header {
@@ -68,6 +61,7 @@
             margin: 10px;
         }
         
+        /* Botão de contato */
         .button {
             background-color: var(--laranja);
             color: var(--branco);
@@ -85,13 +79,34 @@
             background-color: var(--vermelho);
         }
 
+        /* Rodapé com informações de contato */
         footer {
-            background-color: var(--vermelho);
-            color: var(--branco);
+            background-color: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(2px);
+            color: #000;
             text-align: center;
-            padding: 10px;
-            display: flex;
-            justify-content: space-around;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        footer p, footer ul {
+            margin: 10px 0;
+            color: #000;
+        }
+
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        footer a {
+            color: var(--azul-escuro);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -107,12 +122,7 @@
         <p>A Retiblocos está no mercado desde 2007, especializada em retífica de motores diesel pesado. Atendemos desde motores de geradores a caminhões, com ampla experiência em marcas renomadas como Caterpillar, Cummins, Volvo e Mercedes.</p>
     </section>
 
-    <section class="content">
-        <h2>Serviços</h2>
-        <p>Oferecemos serviços de retífica completa, reparos em motores, manutenção preventiva e corretiva, e muito mais.</p>
-    </section>
-
-    <section class="marcas content">
+    <section class="content marcas">
         <h2>Marcas</h2>
         <div>
             <img src="logo-caterpillar.png" alt="Caterpillar">
@@ -122,9 +132,8 @@
         </div>
     </section>
 
-    <section class="content">
+    <footer>
         <h2>Contato</h2>
-        <p>Entre em contato conosco:</p>
         <ul>
             <li>Fixo: <a href="https://wa.me/554130859910" target="_blank">(41) 3085-9910</a> (Erick, Gerente Adm)</li>
             <li>Celular: <a href="https://wa.me/5541999741204" target="_blank">(41) 99741-204</a> (Fernando, Proprietário)</li>
@@ -132,15 +141,7 @@
             <li>CNPJ: 53.659.638/0001-03</li>
         </ul>
         <a href="mailto:escritorio.retiblocos@hotmail.com" class="button">Enviar E-mail</a>
-    </section>
-
-    <footer class="content">
-        <div>
-            <p>Contato: <a href="mailto:escritorio.retiblocos@hotmail.com" style="color: var(--branco);">escritorio.retiblocos@hotmail.com</a> | (41) 3085-9910 | (41) 99741-204</p>
-        </div>
-        <div>
-            <p>&copy; 2024 Retiblocos. Todos os direitos reservados.</p>
-        </div>
+        <p>&copy; 2024 Retiblocos. Todos os direitos reservados.</p>
     </footer>
 
 </body>
