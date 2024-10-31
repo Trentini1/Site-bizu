@@ -22,21 +22,26 @@
             padding: 0;
             background: url('fundo-site.png') no-repeat center center fixed;
             background-size: cover;
-            color: #000; /* Define a cor do texto como preto */
+            color: #000;
             background-blend-mode: multiply;
-            opacity: 0.8; /* Transparência de 20% */
         }
 
-        /* Estilos das áreas de conteúdo com desfoque */
+        /* Estilos das áreas de conteúdo com efeito visual leve */
         .content {
-            background-color: rgba(255, 255, 255, 0.3); /* Fundo com opacidade mais baixa */
-            backdrop-filter: blur(8px); /* Desfoque reduzido */
+            background-color: rgba(255, 255, 255, 0.3);
             border-radius: 10px;
-            padding: 10px 15px; /* Reduzido o padding para aproximar o fundo da logo */
+            padding: 10px 15px;
             margin: 20px;
-            color: #000; /* Cor do texto nas áreas de conteúdo */
+            color: #000;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            will-change: transform, opacity;
         }
         
+        .content:hover {
+            transform: scale(1.02); /* Efeito leve de zoom ao passar o mouse */
+            opacity: 1;
+        }
+
         header {
             text-align: center;
         }
@@ -72,6 +77,7 @@
             font-size: 1em;
             margin-top: 15px;
             display: inline-block;
+            transition: background-color 0.2s ease;
         }
         
         .button:hover {
