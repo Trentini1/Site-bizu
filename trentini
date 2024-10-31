@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retiblocos - Retífica Diesel Pesado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            padding: 20px;
+        }
+        .servicos, .marcas {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .marcas img {
+            max-width: 100px;
+            margin: 10px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Retiblocos</h1>
+        <p>Especialistas em Retífica Diesel Pesado - Caterpillar, Cummins, Volvo e Mercedes</p>
+    </header>
+
+    <section>
+        <h2>Sobre Nós</h2>
+        <p>A Retiblocos é especializada em retífica de motores diesel pesado, atendendo desde motores de geradores a caminhões. Nossa equipe tem ampla experiência com as marcas mais renomadas do mercado, como Caterpillar, Cummins, Volvo e Mercedes.</p>
+    </section>
+
+    <section class="servicos">
+        <h2>Serviços</h2>
+        <p>Oferecemos serviços de retífica completa, reparos em motores, manutenção preventiva e corretiva, e muito mais.</p>
+    </section>
+
+    <section class="marcas">
+        <h2>Marcas</h2>
+        <img src="logo-caterpillar.png" alt="Caterpillar">
+        <img src="logo-cummins.png" alt="Cummins">
+        <img src="logo-volvo.png" alt="Volvo">
+        <img src="logo-mercedes.png" alt="Mercedes">
+    </section>
+
+    <section>
+        <h2>Contato</h2>
+        <p>Entre em contato conosco pelo telefone (XX) XXXX-XXXX ou pelo e-mail contato@retiblocos.com.br.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Retiblocos. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
