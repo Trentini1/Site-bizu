@@ -27,9 +27,9 @@
             background-blend-mode: multiply;
         }
 
-        /* Áreas de conteúdo com desfoque */
-        .content, .cta, footer {
-            background-color: rgba(255, 255, 255, 0.4);
+        /* Estilos de áreas de conteúdo */
+        .content, .cta {
+            background-color: rgba(255, 255, 255, 0.4); /* Desfoque mais transparente */
             backdrop-filter: blur(5px);
             border-radius: 10px;
             padding: 20px 30px;
@@ -45,7 +45,7 @@
 
         /* Logo e cabeçalho */
         .header-compact {
-            background-color: rgba(255, 255, 255, 0.4);
+            background-color: rgba(255, 255, 255, 0.4); /* Desfoque mais transparente */
             padding: 10px 20px;
             max-width: 100%;
             margin: 0 auto;
@@ -69,6 +69,48 @@
             color: var(--laranja);
         }
 
+        /* Estilo para a seção de marcas */
+        .marcas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .marcas img {
+            max-width: 120px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        /* Efeito de giro e aumento ao passar o mouse */
+        .marcas img:hover {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Botão de contato */
+        .button {
+            background-color: var(--laranja);
+            color: var(--branco);
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: var(--vermelho);
+        }
+
         /* Seção de serviços */
         .services {
             display: grid;
@@ -82,112 +124,86 @@
             padding: 15px;
             border-radius: 10px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .service-item:hover {
-            transform: scale(1.05);
         }
 
         .service-item h3 {
             color: var(--azul-escuro);
             font-size: 1.3em;
-            position: relative;
-            z-index: 1;
         }
 
         .service-item p {
             font-size: 0.95em;
+        }
+
+        /* Testemunhos em carrossel */
+        .testimonials {
+            display: flex;
+            overflow: hidden;
+            max-width: 80%;
+            margin: 20px auto;
             position: relative;
-            z-index: 1;
         }
 
-        /* Ícones para Retífica de Motores (verticais) */
-        .service-item:nth-child(1) .icon1 { 
-            position: absolute; 
-            top: 10px; 
-            left: -40px; 
-            width: 30px; 
-            height: 30px; 
-            background-image: url('variante1-motor.png'); 
-            background-size: cover;
+        .testimonial-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            text-align: center;
         }
 
-        .service-item:nth-child(1) .icon2 { 
-            position: absolute; 
-            top: 60px; 
-            left: -40px; 
-            width: 30px; 
-            height: 30px; 
-            background-image: url('variante2-motor.png'); 
-            background-size: cover;
+        .testimonial-item p {
+            font-style: italic;
         }
 
-        .service-item:nth-child(1) .icon3 { 
-            position: absolute; 
-            top: 110px; 
-            left: -40px; 
-            width: 30px; 
-            height: 30px; 
-            background-image: url('variante3-motor.png'); 
-            background-size: cover;
+        .testimonial-item h4 {
+            color: var(--azul-escuro);
+            font-size: 1.1em;
         }
 
-        .service-item:nth-child(1) .icon4 { 
-            position: absolute; 
-            top: 160px; 
-            left: -40px; 
-            width: 30px; 
-            height: 30px; 
-            background-image: url('variante4-motor.png'); 
-            background-size: cover;
+        /* Botões de navegação do carrossel */
+        .testimonial-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2em;
+            color: var(--laranja);
+            cursor: pointer;
+            user-select: none;
         }
 
-        /* Ícones para Suporte Técnico (aleatórios) */
-        .service-item:nth-child(4) .icon1 { 
-            position: absolute; 
-            top: -10px; 
-            right: 10px; 
-            width: 25px; 
-            height: 25px; 
-            background-image: url('engrenagem-suporte.png'); 
-            background-size: cover;
-            transform: rotate(20deg);
+        .prev {
+            left: 10px;
         }
 
-        .service-item:nth-child(4) .icon2 { 
-            position: absolute; 
-            bottom: 10px; 
-            left: 20px; 
-            width: 25px; 
-            height: 25px; 
-            background-image: url('variante1-chave.png'); 
-            background-size: cover;
-            transform: rotate(-15deg);
+        .next {
+            right: 10px;
         }
 
-        .service-item:nth-child(4) .icon3 { 
-            position: absolute; 
-            top: 20px; 
-            left: 10px; 
-            width: 25px; 
-            height: 25px; 
-            background-image: url('variante2-chave.png'); 
-            background-size: cover;
-            transform: rotate(30deg);
+        /* Rodapé */
+        footer {
+            background-color: rgba(255, 255, 255, 0.4); /* Desfoque mais transparente */
+            color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
         }
 
-        .service-item:nth-child(4) .icon4 { 
-            position: absolute; 
-            bottom: 15px; 
-            right: 5px; 
-            width: 25px; 
-            height: 25px; 
-            background-image: url('variante3-chave.png'); 
-            background-size: cover;
-            transform: rotate(-25deg);
+        .footer-contact h2 {
+            color: var(--laranja);
+        }
+
+        .footer-contact ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer-bottom {
+            font-size: 0.9em;
+            text-align: right;
         }
     </style>
 </head>
@@ -205,17 +221,23 @@
         <p>A Retiblocos atua desde 2007 na retífica de motores diesel pesado, oferecendo serviços de excelência para motores de geradores e caminhões. Somos especializados em marcas renomadas como Caterpillar, Cummins, Volvo e Mercedes.</p>
     </section>
 
-    <!-- Seção de Serviços com Ícones Posicionados -->
+    <!-- Seção de Marcas -->
+    <section class="content marcas">
+        <h2>Marcas</h2>
+        <div>
+            <img src="logo-caterpillar.png" alt="Caterpillar">
+            <img src="logo-cummins.png" alt="Cummins">
+            <img src="logo-volvo.png" alt="Volvo">
+            <img src="logo-mercedes.png" alt="Mercedes">
+        </div>
+    </section>
+
+    <!-- Seção de Serviços -->
     <section class="content services">
         <h2>Serviços</h2>
         <div class="service-item">
             <h3>Retífica de Motores</h3>
             <p>Realizamos retífica completa de motores diesel com equipamentos de alta tecnologia.</p>
-            <!-- Ícones para Retífica de Motores (verticais) -->
-            <div class="icon icon1"></div>
-            <div class="icon icon2"></div>
-            <div class="icon icon3"></div>
-            <div class="icon icon4"></div>
         </div>
         <div class="service-item">
             <h3>Venda de Peças</h3>
@@ -228,16 +250,38 @@
         <div class="service-item">
             <h3>Suporte Técnico</h3>
             <p>Consultoria técnica especializada para diagnóstico e manutenção de motores.</p>
-            <!-- Ícones para Suporte Técnico (aleatórios) -->
-            <div class="icon icon1"></div>
-            <div class="icon icon2"></div>
-            <div class="icon icon3"></div>
-            <div class="icon icon4"></div>
         </div>
     </section>
 
-    <!-- Rodapé com desfoque corrigido -->
-    <footer class="content">
+    <!-- Seção de Testemunhos -->
+    <section class="content testimonials">
+        <h2>O Que Nossos Clientes Dizem</h2>
+        <div class="testimonial-item">
+            <p>"Serviço de alta qualidade e atendimento excelente! Recomendo a Retiblocos para todos os profissionais da área."</p>
+            <h4>– José Carlos, Transportadora Alfa</h4>
+        </div>
+        <div class="testimonial-item">
+            <p>"Precisei de uma retífica urgente e a Retiblocos resolveu tudo rapidamente e com precisão."</p>
+            <h4>– Maria Clara, Gerente de Frotas</h4>
+        </div>
+        <div class="testimonial-item">
+            <p>"Peças originais e serviço de confiança. Estou muito satisfeito com a manutenção dos nossos caminhões."</p>
+            <h4>– Ricardo Mendes, Logística Mendes</h4>
+        </div>
+        <!-- Navegação do carrossel -->
+        <span class="testimonial-nav prev" onclick="prevSlide()">&#10094;</span>
+        <span class="testimonial-nav next" onclick="nextSlide()">&#10095;</span>
+    </section>
+
+    <!-- CTA para contato -->
+    <section class="content cta">
+        <h2>Pronto para Revitalizar Seu Motor?</h2>
+        <p>Entre em contato com nossos especialistas e descubra como podemos ajudar você a obter o máximo desempenho dos seus motores.</p>
+        <a href="mailto:escritorio.retiblocos@hotmail.com" class="button">Fale Conosco</a>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
         <div class="footer-contact">
             <h2>Contato</h2>
             <ul>
@@ -253,5 +297,30 @@
         </div>
     </footer>
 
+    <script>
+        // Função de carrossel para os testemunhos
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-item');
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.style.display = 'none');
+            slides[index].style.display = 'block';
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Exibe o primeiro testemunho ao carregar a página
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(currentSlide);
+        });
+    </script>
 </body>
 </html>
