@@ -330,7 +330,7 @@
         <h3>Deixe seu comentário</h3>
         <!-- Botão de Login com Google -->
         <div id="g_id_onload"
-             data-client_id="YOUR_GOOGLE_CLIENT_ID"
+             data-client_id="82398731047-clr0ui92b714jk6m41gd236n3r46q8h7.apps.googleusercontent.com"
              data-callback="handleCredentialResponse">
         </div>
         <div class="g_id_signin"
@@ -356,7 +356,7 @@
             <button type="submit">Enviar Comentário</button>
         </form>
         <p id="feedback" style="color: red; display: none;">Comentário considerado inapropriado.</p>
-        <p id="average-rating" style="font-weight: bold; margin-top: 10px;"></p>
+        <p id="average-rating" style="font-weight: bold; margin-top: 10px;">Avaliação média: 5.0 estrelas</p>
     </div>
 </section>
 
@@ -432,8 +432,8 @@
     }
 
     // Função para adicionar novo comentário
-    let ratings = [];
-    
+    let ratings = [5]; // Incluindo uma avaliação inicial para demonstrar
+
     function addTestimonial(event) {
         event.preventDefault();
         const comment = document.getElementById('comment').value;
