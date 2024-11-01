@@ -338,26 +338,48 @@
 </section>
 
 <style>
-    /* Estilo aprimorado para a seção de comentários */
+    /* Estilo mais compacto para a seção de comentários */
+    .testimonials {
+        padding: 10px;
+    }
+
+    .testimonial-slider {
+        max-height: 200px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .testimonial-item {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .testimonial-nav {
+        font-size: 1.5em;
+        top: 45%;
+    }
+
     .add-testimonial {
         background-color: rgba(255, 255, 255, 0.8);
         border-radius: 10px;
-        padding: 20px;
-        margin-top: 20px;
+        padding: 15px;
+        margin-top: 15px;
         text-align: center;
+        font-size: 0.9em;
     }
 
     .add-testimonial h3 {
+        font-size: 1em;
         color: var(--laranja);
     }
 
     .add-testimonial input, .add-testimonial textarea, .add-testimonial select, .add-testimonial button {
         width: 100%;
-        margin-top: 10px;
-        padding: 10px;
+        margin-top: 8px;
+        padding: 8px;
         border-radius: 5px;
         border: 1px solid #ddd;
-        font-size: 1em;
+        font-size: 0.9em;
     }
 
     .add-testimonial button {
@@ -366,15 +388,22 @@
         cursor: pointer;
         transition: background-color 0.3s ease;
         font-weight: bold;
+        font-size: 0.9em;
     }
 
     .add-testimonial button:hover {
         background-color: var(--vermelho);
     }
+
+    .delete-btn {
+        color: #ff0000;
+        font-size: 0.8em;
+        cursor: pointer;
+    }
 </style>
 
 <script>
-    // Controle do carrossel de testemunhos
+    // Carregar comentários e controle de carrossel
     let currentIndex = 0;
 
     function showSlide(index) {
@@ -396,7 +425,6 @@
         showSlide(currentIndex);
     }
 
-    // Função para carregar comentários salvos no Local Storage
     function loadTestimonials() {
         const testimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
         const testimonialSlider = document.getElementById('testimonialSlider');
@@ -415,9 +443,6 @@
         showSlide(currentIndex);
     }
 
-    // Função para adicionar novo comentário
-    let ratings = [5]; // Incluindo uma avaliação inicial para demonstrar
-
     function addTestimonial(event) {
         event.preventDefault();
         const name = document.getElementById('name').value;
@@ -426,7 +451,6 @@
         const rating = parseInt(document.getElementById('rating').value);
         const feedback = document.getElementById('feedback');
         
-        // Identificar comentário negativo
         const inappropriateWords = ["ruim", "péssimo", "horrível", "lixo"];
         const containsBadWord = inappropriateWords.some(word => comment.toLowerCase().includes(word));
         
@@ -434,17 +458,14 @@
             feedback.style.display = "block";
         } else {
             feedback.style.display = "none";
-            // Salvar comentário no Local Storage
             const testimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
             testimonials.push({ name, company, comment, rating });
             localStorage.setItem('testimonials', JSON.stringify(testimonials));
-            ratings.push(rating);
             loadTestimonials();
             document.getElementById('testimonialForm').reset();
         }
     }
 
-    // Função para atualizar média de avaliações
     function updateAverageRating() {
         const testimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
         if (testimonials.length === 0) return;
@@ -454,18 +475,16 @@
         document.getElementById('average-rating').textContent = `Avaliação média: ${avg} estrelas`;
     }
 
-    // Função para excluir comentário
     function deleteTestimonial(index) {
         const testimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
         testimonials.splice(index, 1);
         localStorage.setItem('testimonials', JSON.stringify(testimonials));
-        ratings.splice(index, 1);
         loadTestimonials();
     }
 
-    // Carregar testemunhos ao carregar a página
     document.addEventListener('DOMContentLoaded', loadTestimonials);
 </script>
+
 
 
 
