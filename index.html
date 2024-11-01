@@ -306,19 +306,8 @@
    <!-- Seção de Testemunhos -->
 <section class="content testimonials" id="testemunhos">
     <h2>O Que Nossos Clientes Dizem</h2>
-    <div class="testimonial-slider">
-        <div class="testimonial-item active">
-            <p>“Serviço de alta qualidade e atendimento excelente! Recomendo a Retiblocos para todos os profissionais da área.”</p>
-            <h4>– José Carlos, Transportadora Alfa</h4>
-        </div>
-        <div class="testimonial-item">
-            <p>“Precisei de uma retífica urgente e a Retiblocos resolveu tudo rapidamente e com precisão.”</p>
-            <h4>– Maria Clara, Gerente de Frotas</h4>
-        </div>
-        <div class="testimonial-item">
-            <p>“Peças originais e serviço de confiança. Estou muito satisfeito com a manutenção dos nossos caminhões.”</p>
-            <h4>– Ricardo Mendes, Logística Mendes</h4>
-        </div>
+    <div class="testimonial-slider" id="testimonialSlider">
+        <!-- Comentários serão carregados aqui -->
     </div>
     <div class="testimonial-nav">
         <span class="prev" onclick="prevSlide()">&#10094;</span>
@@ -387,29 +376,44 @@
 <script>
     // Controle do carrossel de testemunhos
     let currentIndex = 0;
-    const testimonials = document.querySelectorAll('.testimonial-item');
 
     function showSlide(index) {
+        const testimonials = document.querySelectorAll('.testimonial-item');
         testimonials.forEach((item, i) => {
-            item.classList.remove('active');
-            if (i === index) {
-                item.classList.add('active');
-            }
+            item.style.display = i === index ? 'block' : 'none';
         });
     }
 
     function nextSlide() {
+        const testimonials = document.querySelectorAll('.testimonial-item');
         currentIndex = (currentIndex + 1) % testimonials.length;
         showSlide(currentIndex);
     }
 
     function prevSlide() {
+        const testimonials = document.querySelectorAll('.testimonial-item');
         currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
         showSlide(currentIndex);
     }
 
-    // Carrossel automático
-    setInterval(nextSlide, 5000); // Troca de slide a cada 5 segundos
+    // Função para carregar comentários salvos no Local Storage
+    function loadTestimonials() {
+        const testimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
+        const testimonialSlider = document.getElementById('testimonialSlider');
+        testimonialSlider.innerHTML = '';
+        testimonials.forEach((testimonial, index) => {
+            const testimonialItem = document.createElement("div");
+            testimonialItem.classList.add("testimonial-item");
+            testimonialItem.innerHTML = `
+                <p>“${testimonial.comment}”</p>
+                <h4>– ${testimonial.name}${testimonial.company ? ', ' + testimonial.company : ''}</h4>
+                <span class="delete-btn" onclick="deleteTestimonial(${index})">🗑️ Excluir</span>
+            `;
+            testimonialSlider.appendChild(testimonialItem);
+        });
+        updateAverageRating();
+        showSlide(currentIndex);
+    }
 
     // Função para adicionar novo comentário
     let ratings = [5]; // Incluindo uma avaliação inicial para demonstrar
@@ -430,24 +434,39 @@
             feedback.style.display = "block";
         } else {
             feedback.style.display = "none";
-            // Adicionar comentário e atualizar média de avaliação
-            const newTestimonial = document.createElement("div");
-            newTestimonial.classList.add("testimonial-item");
-            newTestimonial.innerHTML = `<p>“${comment}”</p><h4>– ${name}${company ? ', ' + company : ''}</h4>`;
-            document.querySelector(".testimonial-slider").appendChild(newTestimonial);
+            // Salvar comentário no Local Storage
+            const testimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
+            testimonials.push({ name, company, comment, rating });
+            localStorage.setItem('testimonials', JSON.stringify(testimonials));
             ratings.push(rating);
-            updateAverageRating();
+            loadTestimonials();
             document.getElementById('testimonialForm').reset();
         }
     }
 
     // Função para atualizar média de avaliações
     function updateAverageRating() {
-        const sum = ratings.reduce((a, b) => a + b, 0);
-        const avg = (sum / ratings.length).toFixed(1);
+        const testimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
+        if (testimonials.length === 0) return;
+        
+        const sum = testimonials.reduce((acc, t) => acc + t.rating, 0);
+        const avg = (sum / testimonials.length).toFixed(1);
         document.getElementById('average-rating').textContent = `Avaliação média: ${avg} estrelas`;
     }
+
+    // Função para excluir comentário
+    function deleteTestimonial(index) {
+        const testimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
+        testimonials.splice(index, 1);
+        localStorage.setItem('testimonials', JSON.stringify(testimonials));
+        ratings.splice(index, 1);
+        loadTestimonials();
+    }
+
+    // Carregar testemunhos ao carregar a página
+    document.addEventListener('DOMContentLoaded', loadTestimonials);
 </script>
+
 
 
 
