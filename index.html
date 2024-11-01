@@ -104,36 +104,90 @@
             z-index: 1;
         }
 
-        /* Estilos e animação para os ícones */
-        .service-item .icon {
-            width: 30px;
-            height: 30px;
-            position: absolute;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        /* Ícones para Retífica de Motores (verticais) */
+        .service-item:nth-child(1) .icon1 { 
+            position: absolute; 
+            top: 10px; 
+            left: -40px; 
+            width: 30px; 
+            height: 30px; 
+            background-image: url('variante1-motor.png'); 
+            background-size: cover;
         }
 
-        .service-item:hover .icon {
-            opacity: 1;
-            animation: float 3s infinite ease-in-out;
+        .service-item:nth-child(1) .icon2 { 
+            position: absolute; 
+            top: 60px; 
+            left: -40px; 
+            width: 30px; 
+            height: 30px; 
+            background-image: url('variante2-motor.png'); 
+            background-size: cover;
         }
 
-        /* Ícones para Retífica de Motores */
-        .service-item:nth-child(1) .icon1 { top: 10px; left: 10px; background-image: url('variante1-motor.png'); }
-        .service-item:nth-child(1) .icon2 { top: 10px; right: 10px; background-image: url('variante2-motor.png'); }
-        .service-item:nth-child(1) .icon3 { bottom: 10px; left: 10px; background-image: url('variante3-motor.png'); }
-        .service-item:nth-child(1) .icon4 { bottom: 10px; right: 10px; background-image: url('variante4-motor.png'); }
+        .service-item:nth-child(1) .icon3 { 
+            position: absolute; 
+            top: 110px; 
+            left: -40px; 
+            width: 30px; 
+            height: 30px; 
+            background-image: url('variante3-motor.png'); 
+            background-size: cover;
+        }
 
-        /* Ícones para Suporte Técnico */
-        .service-item:nth-child(4) .icon1 { top: 5px; right: 5px; background-image: url('engrenagem-suporte.png'); }
-        .service-item:nth-child(4) .icon2 { bottom: 5px; left: 5px; background-image: url('variante1-chave.png'); }
-        .service-item:nth-child(4) .icon3 { top: 10px; left: 10px; background-image: url('variante2-chave.png'); }
-        .service-item:nth-child(4) .icon4 { bottom: 10px; right: 10px; background-image: url('variante3-chave.png'); }
+        .service-item:nth-child(1) .icon4 { 
+            position: absolute; 
+            top: 160px; 
+            left: -40px; 
+            width: 30px; 
+            height: 30px; 
+            background-image: url('variante4-motor.png'); 
+            background-size: cover;
+        }
 
-        /* Animação de flutuação dos ícones */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        /* Ícones para Suporte Técnico (aleatórios) */
+        .service-item:nth-child(4) .icon1 { 
+            position: absolute; 
+            top: -10px; 
+            right: 10px; 
+            width: 25px; 
+            height: 25px; 
+            background-image: url('engrenagem-suporte.png'); 
+            background-size: cover;
+            transform: rotate(20deg);
+        }
+
+        .service-item:nth-child(4) .icon2 { 
+            position: absolute; 
+            bottom: 10px; 
+            left: 20px; 
+            width: 25px; 
+            height: 25px; 
+            background-image: url('variante1-chave.png'); 
+            background-size: cover;
+            transform: rotate(-15deg);
+        }
+
+        .service-item:nth-child(4) .icon3 { 
+            position: absolute; 
+            top: 20px; 
+            left: 10px; 
+            width: 25px; 
+            height: 25px; 
+            background-image: url('variante2-chave.png'); 
+            background-size: cover;
+            transform: rotate(30deg);
+        }
+
+        .service-item:nth-child(4) .icon4 { 
+            position: absolute; 
+            bottom: 15px; 
+            right: 5px; 
+            width: 25px; 
+            height: 25px; 
+            background-image: url('variante3-chave.png'); 
+            background-size: cover;
+            transform: rotate(-25deg);
         }
     </style>
 </head>
@@ -151,13 +205,13 @@
         <p>A Retiblocos atua desde 2007 na retífica de motores diesel pesado, oferecendo serviços de excelência para motores de geradores e caminhões. Somos especializados em marcas renomadas como Caterpillar, Cummins, Volvo e Mercedes.</p>
     </section>
 
-    <!-- Seção de Serviços com Ícones Animados -->
+    <!-- Seção de Serviços com Ícones Posicionados -->
     <section class="content services">
         <h2>Serviços</h2>
         <div class="service-item">
             <h3>Retífica de Motores</h3>
             <p>Realizamos retífica completa de motores diesel com equipamentos de alta tecnologia.</p>
-            <!-- Ícones para Retífica de Motores -->
+            <!-- Ícones para Retífica de Motores (verticais) -->
             <div class="icon icon1"></div>
             <div class="icon icon2"></div>
             <div class="icon icon3"></div>
@@ -174,7 +228,7 @@
         <div class="service-item">
             <h3>Suporte Técnico</h3>
             <p>Consultoria técnica especializada para diagnóstico e manutenção de motores.</p>
-            <!-- Ícones para Suporte Técnico -->
+            <!-- Ícones para Suporte Técnico (aleatórios) -->
             <div class="icon icon1"></div>
             <div class="icon icon2"></div>
             <div class="icon icon3"></div>
