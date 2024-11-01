@@ -328,7 +328,22 @@
     <!-- Formulário para adicionar novo comentário -->
     <div class="add-testimonial">
         <h3>Deixe seu comentário</h3>
-        <form id="testimonialForm" onsubmit="addTestimonial(event)">
+        <!-- Botão de Login com Google -->
+        <div id="g_id_onload"
+             data-client_id="YOUR_GOOGLE_CLIENT_ID"
+             data-callback="handleCredentialResponse">
+        </div>
+        <div class="g_id_signin"
+             data-type="standard"
+             data-shape="rectangular"
+             data-theme="outline"
+             data-text="sign_in_with"
+             data-size="large"
+             data-locale="pt-BR"
+             data-logo_alignment="left">
+        </div>
+        
+        <form id="testimonialForm" onsubmit="addTestimonial(event)" style="display: none;">
             <textarea id="comment" placeholder="Escreva seu comentário aqui..." required></textarea>
             <label for="rating">Dê uma nota:</label>
             <select id="rating" required>
@@ -346,80 +361,13 @@
 </section>
 
 <style>
-    /* Estilo para a seção de testemunhos */
-    .testimonials {
-        position: relative;
-        overflow: hidden;
-        padding-top: 20px;
-    }
-
-    .testimonial-slider {
-        display: flex;
-        width: 100%;
-        transition: transform 0.5s ease-in-out;
-        overflow: hidden;
-    }
-
-    .testimonial-item {
-        min-width: 100%;
-        padding: 20px;
-        text-align: center;
-        background-color: rgba(255, 255, 255, 0.9);
-        border-radius: 10px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        opacity: 0;
-        transform: scale(0.9);
-        transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    .testimonial-item.active {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    .testimonial-item p {
-        font-style: italic;
-        font-size: 1.1em;
-        color: #333;
-        margin-bottom: 10px;
-    }
-
-    .testimonial-item h4 {
-        color: var(--azul-escuro);
-        font-size: 1em;
-    }
-
-    /* Navegação do carrossel */
-    .testimonial-nav {
-        position: absolute;
-        top: 50%;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        transform: translateY(-50%);
-        pointer-events: none;
-    }
-
-    .testimonial-nav span {
-        font-size: 2em;
-        color: var(--laranja);
-        cursor: pointer;
-        transition: color 0.3s ease;
-        user-select: none;
-        padding: 0 20px;
-        pointer-events: auto;
-    }
-
-    .testimonial-nav span:hover {
-        color: var(--vermelho);
-    }
-
-    /* Formulário de novo comentário */
+    /* Estilo aprimorado para a seção de comentários */
     .add-testimonial {
         background-color: rgba(255, 255, 255, 0.8);
         border-radius: 10px;
         padding: 20px;
         margin-top: 20px;
+        text-align: center;
     }
 
     .add-testimonial h3 {
@@ -448,6 +396,7 @@
     }
 </style>
 
+<script src="https://accounts.google.com/gsi/client" async defer></script>
 <script>
     // Controle do carrossel de testemunhos
     let currentIndex = 0;
@@ -474,6 +423,13 @@
 
     // Carrossel automático
     setInterval(nextSlide, 5000); // Troca de slide a cada 5 segundos
+
+    // Função para lidar com resposta do Google Sign-In
+    function handleCredentialResponse(response) {
+        document.getElementById('testimonialForm').style.display = 'block';
+        console.log("User signed in with Google: ", response);
+        // Aqui você pode adicionar o código para exibir o nome do usuário ou sua imagem de perfil.
+    }
 
     // Função para adicionar novo comentário
     let ratings = [];
@@ -516,7 +472,7 @@
 <section class="content" id="contato">
     <h2>Localização</h2>
     <a href="https://www.google.com.br/maps/place/Retiblocos+Recuperação+De+Peças+De+Motores/@-25.5588684,-49.2737771,15z/data=!4m6!3m5!1s0x94dcfb6f45c24819:0xdda8cabfb32e092!8m2!3d-25.5553008!4d-49.2719035!16s%2Fg%2F11fzry88vd?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-        <img src="imagem-mapa.png" alt="Mapa da localização da Retiblocos" style="width: 100%; height: auto; border-radius: 10px;">
+        <img src="imagem-mapa.png" alt="Mapa da localização da Retiblocos" style="width: 50%; height: auto; border-radius: 10px;">
     </a>
 </section>
 
