@@ -104,87 +104,36 @@
             z-index: 1;
         }
 
-        /* Ícones animados para cada serviço */
+        /* Estilos e animação para os ícones */
+        .service-item .icon {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
         .service-item:hover .icon {
-            display: block;
-            opacity: 0.8;
+            opacity: 1;
             animation: float 3s infinite ease-in-out;
         }
 
         /* Ícones para Retífica de Motores */
-        .service-item:nth-child(1) .icon1 {
-            content: url('variante1-motor.png');
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            animation-delay: 0s;
-        }
-
-        .service-item:nth-child(1) .icon2 {
-            content: url('variante2-motor.png');
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            animation-delay: 1s;
-        }
-
-        .service-item:nth-child(1) .icon3 {
-            content: url('variante3-motor.png');
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            animation-delay: 1.5s;
-        }
-
-        .service-item:nth-child(1) .icon4 {
-            content: url('variante4-motor.png');
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            animation-delay: 2s;
-        }
+        .service-item:nth-child(1) .icon1 { top: 10px; left: 10px; background-image: url('variante1-motor.png'); }
+        .service-item:nth-child(1) .icon2 { top: 10px; right: 10px; background-image: url('variante2-motor.png'); }
+        .service-item:nth-child(1) .icon3 { bottom: 10px; left: 10px; background-image: url('variante3-motor.png'); }
+        .service-item:nth-child(1) .icon4 { bottom: 10px; right: 10px; background-image: url('variante4-motor.png'); }
 
         /* Ícones para Suporte Técnico */
-        .service-item:nth-child(4) .icon1 {
-            content: url('engrenagem-suporte.png');
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            animation-delay: 0.5s;
-        }
-
-        .service-item:nth-child(4) .icon2 {
-            content: url('variante1-chave.png');
-            position: absolute;
-            bottom: 5px;
-            left: 5px;
-            animation-delay: 1s;
-        }
-
-        .service-item:nth-child(4) .icon3 {
-            content: url('variante2-chave.png');
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            animation-delay: 1.5s;
-        }
-
-        .service-item:nth-child(4) .icon4 {
-            content: url('variante3-chave.png');
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            animation-delay: 2s;
-        }
+        .service-item:nth-child(4) .icon1 { top: 5px; right: 5px; background-image: url('engrenagem-suporte.png'); }
+        .service-item:nth-child(4) .icon2 { bottom: 5px; left: 5px; background-image: url('variante1-chave.png'); }
+        .service-item:nth-child(4) .icon3 { top: 10px; left: 10px; background-image: url('variante2-chave.png'); }
+        .service-item:nth-child(4) .icon4 { bottom: 10px; right: 10px; background-image: url('variante3-chave.png'); }
 
         /* Animação de flutuação dos ícones */
         @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
     </style>
 </head>
@@ -233,33 +182,6 @@
         </div>
     </section>
 
-    <!-- Seção de Testemunhos -->
-    <section class="content testimonials">
-        <h2>O Que Nossos Clientes Dizem</h2>
-        <div class="testimonial-item">
-            <p>"Serviço de alta qualidade e atendimento excelente! Recomendo a Retiblocos para todos os profissionais da área."</p>
-            <h4>– José Carlos, Transportadora Alfa</h4>
-        </div>
-        <div class="testimonial-item">
-            <p>"Precisei de uma retífica urgente e a Retiblocos resolveu tudo rapidamente e com precisão."</p>
-            <h4>– Maria Clara, Gerente de Frotas</h4>
-        </div>
-        <div class="testimonial-item">
-            <p>"Peças originais e serviço de confiança. Estou muito satisfeito com a manutenção dos nossos caminhões."</p>
-            <h4>– Ricardo Mendes, Logística Mendes</h4>
-        </div>
-        <!-- Navegação do carrossel -->
-        <span class="testimonial-nav prev" onclick="prevSlide()">&#10094;</span>
-        <span class="testimonial-nav next" onclick="nextSlide()">&#10095;</span>
-    </section>
-
-    <!-- CTA para contato -->
-    <section class="content cta">
-        <h2>Pronto para Revitalizar Seu Motor?</h2>
-        <p>Entre em contato com nossos especialistas e descubra como podemos ajudar você a obter o máximo desempenho dos seus motores.</p>
-        <a href="mailto:escritorio.retiblocos@hotmail.com" class="button">Fale Conosco</a>
-    </section>
-
     <!-- Rodapé com desfoque corrigido -->
     <footer class="content">
         <div class="footer-contact">
@@ -277,30 +199,5 @@
         </div>
     </footer>
 
-    <script>
-        // Função de carrossel para os testemunhos
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.testimonial-item');
-
-        function showSlide(index) {
-            slides.forEach(slide => slide.style.display = 'none');
-            slides[index].style.display = 'block';
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        // Exibe o primeiro testemunho ao carregar a página
-        document.addEventListener('DOMContentLoaded', () => {
-            showSlide(currentSlide);
-        });
-    </script>
 </body>
 </html>
