@@ -27,14 +27,14 @@
             background-blend-mode: multiply;
         }
 
-        /* Navbar fixa */
+        /* Navbar fixa com espaçamento */
         .navbar {
             position: fixed;
             top: 0;
             width: 100%;
             background-color: rgba(0, 0, 0, 0.7);
             color: #fff;
-            padding: 10px 0;
+            padding: 15px 0;
             display: flex;
             justify-content: center;
             z-index: 10;
@@ -67,12 +67,12 @@
             transform: scale(1.02);
         }
 
-        /* Cabeçalho e logo */
+        /* Ajuste de posição da logo e cabeçalho */
         .header-compact {
+            margin-top: 60px; /* Espaço extra para evitar sobreposição com o menu */
             background-color: rgba(255, 255, 255, 0.4);
             padding: 10px 20px;
             max-width: 100%;
-            margin: 0 auto;
             text-align: center;
         }
 
@@ -148,7 +148,6 @@
             border-radius: 10px;
             text-align: center;
             transition: transform 0.3s ease;
-            position: relative;
         }
 
         .service-item:hover {
@@ -176,8 +175,11 @@
         /* Google Maps */
         .map {
             margin-top: 20px;
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 10px;
         }
-
     </style>
 </head>
 <body>
@@ -250,16 +252,17 @@
             <p>"Peças originais e serviço de confiança. Estou muito satisfeito com a manutenção dos nossos caminhões."</p>
             <h4>– Ricardo Mendes, Logística Mendes</h4>
         </div>
-        <!-- Navegação do carrossel -->
-        <span class="testimonial-nav prev" onclick="prevSlide()">&#10094;</span>
-        <span class="testimonial-nav next" onclick="nextSlide()">&#10095;</span>
     </section>
 
     <!-- Google Maps -->
-    <section class="content map-section" id="contato">
+    <section class="content" id="contato">
         <h2>Localização</h2>
         <p>Rua Pérola do Oeste, 2473</p>
-        <iframe class="map" src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=Rua+Pérola+do+Oeste,+2473" width="100%" height="300" style="border:0;" allowfullscreen></iframe>
+        <iframe 
+            class="map" 
+            src="https://www.google.com.br/maps/place/Retiblocos+Recuperação+De+Peças+De+Motores/@-25.5588684,-49.2737771,15z/data=!4m6!3m5!1s0x94dcfb6f45c24819:0xdda8cabfb32e092!8m2!3d-25.5553008!4d-49.2719035!16s%2Fg%2F11fzry88vd?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D" 
+            allowfullscreen>
+        </iframe>
     </section>
 
     <!-- Rodapé -->
