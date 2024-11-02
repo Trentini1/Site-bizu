@@ -308,19 +308,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avaliações - Retiblocos</title>
+    <title>Retiblocos - Avaliações de Clientes</title>
+    <link rel="icon" href="mini-logo.png" type="image/png">
     <style>
-        /* Estilos para a seção de avaliações */
+        /* Paleta de cores e estilos */
+        :root {
+            --azul-escuro: #006699;
+            --laranja: #FF6600;
+            --amarelo-claro: #FFCC33;
+            --vermelho: #CC3333;
+            --branco: #FFFFFF;
+            --cinza: #f2f2f2;
+        }
+
+        /* Fundo do site */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('fundo-site.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #000;
+        }
+
+        /* Estilos de áreas de conteúdo */
         .content {
             background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
             border-radius: 10px;
             padding: 20px;
             margin: 20px auto;
             max-width: 800px;
-            color: #333;
-            font-family: Arial, sans-serif;
+            color: #000;
+            transition: transform 0.3s ease;
         }
 
+        /* Logo e cabeçalho */
+        .header-compact {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px 20px;
+            max-width: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .header-compact img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: block;
+            margin: auto;
+            object-fit: contain;
+        }
+
+        h2, h3 {
+            color: var(--laranja);
+        }
+
+        /* Estilos para avaliações */
         .avaliacoes-slider {
             position: relative;
             padding: 20px;
@@ -402,6 +447,11 @@
 </head>
 <body>
 
+<section class="content header-compact">
+    <img src="logo-retiblocos.png" alt="Retiblocos - Retífica Diesel Pesado">
+    <p>Especialistas em Retífica Diesel Pesado - Caterpillar, Cummins, Volvo e Mercedes</p>
+</section>
+
 <section class="content avaliacoes" id="avaliacoes">
     <h2>Avaliações dos Clientes</h2>
     <div class="avaliacoes-slider" id="avaliacoesSlider">
@@ -435,12 +485,8 @@
     </div>
 </section>
 
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
-
-<script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
 <script>
     // Configuração do Firebase
@@ -450,13 +496,12 @@
         projectId: "retiblocos-c175c",
         storageBucket: "retiblocos-c175c.appspot.com",
         messagingSenderId: "937580227378",
-        appId: "1:937580227378:web:YOUR_APP_ID"  // Certifique-se de que o appId está completo
+        appId: "1:937580227378:web:YOUR_APP_ID"
     };
 
     // Inicializa o Firebase
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
-</script>
 
     let currentIndex = 0;
 
@@ -489,8 +534,7 @@
                 avaliacoesItem.classList.add("avaliacao-item");
                 avaliacoesItem.innerHTML = `
                     <p>“${avaliacao.comment}”</p>
-                    <h4>– ${avaliacao.name}${avaliacao.company ? ', ' + avaliacao.company : ''}</h4>
-                    <span class="delete-btn" onclick="deleteAvaliacao('${doc.id}')">🗑️ Excluir</span>
+                    <h4>– ${avaliacao.name}</h4>
                 `;
                 avaliacoesSlider.appendChild(avaliacoesItem);
             });
@@ -516,8 +560,6 @@
             console.log("Avaliação adicionada com sucesso!");
             loadAvaliacoes();
             document.getElementById('avaliacaoForm').reset();
-        }).catch((error) => {
-            console.error("Erro ao adicionar avaliação: ", error);
         });
     }
 
@@ -527,15 +569,6 @@
             const sum = ratings.reduce((acc, rating) => acc + rating, 0);
             const avg = (sum / ratings.length).toFixed(1);
             document.getElementById('average-rating').textContent = `Avaliação média: ${avg} estrelas`;
-        });
-    }
-
-    function deleteAvaliacao(id) {
-        db.collection("avaliacoes").doc(id).delete().then(() => {
-            console.log("Avaliação excluída!");
-            loadAvaliacoes();
-        }).catch((error) => {
-            console.error("Erro ao excluir avaliação: ", error);
         });
     }
 
