@@ -303,25 +303,123 @@
 </style>
 
 
-   <!-- Seção de Testemunhos -->
-<section class="content testimonials" id="testemunhos">
-    <h2>O Que Nossos Clientes Dizem</h2>
-    <div class="testimonial-slider" id="testimonialSlider">
-        <!-- Comentários serão carregados aqui -->
+   <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliações - Retiblocos</title>
+    <style>
+        /* Estilos para a seção de avaliações */
+        .content {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+
+        .avaliacoes-slider {
+            position: relative;
+            padding: 20px;
+        }
+
+        .avaliacao-item {
+            display: none;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .avaliacao-item p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        .avaliacao-item h4 {
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .add-avaliacao {
+            background-color: rgba(240, 240, 240, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .add-avaliacao h3 {
+            font-size: 1.2em;
+            color: #FF6600;
+        }
+
+        .add-avaliacao input, .add-avaliacao textarea, .add-avaliacao select, .add-avaliacao button {
+            width: 100%;
+            margin-top: 8px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+        }
+
+        .add-avaliacao button {
+            background-color: #FF6600;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .add-avaliacao button:hover {
+            background-color: #CC3333;
+        }
+
+        .delete-btn {
+            color: #ff0000;
+            font-size: 0.8em;
+            cursor: pointer;
+        }
+
+        .avaliacao-nav {
+            font-size: 1.5em;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .avaliacao-nav span {
+            cursor: pointer;
+            color: #FF6600;
+            margin: 0 10px;
+        }
+
+        .average-rating {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<section class="content avaliacoes" id="avaliacoes">
+    <h2>Avaliações dos Clientes</h2>
+    <div class="avaliacoes-slider" id="avaliacoesSlider">
+        <!-- As avaliações serão carregadas aqui -->
     </div>
-    <div class="testimonial-nav">
+    <div class="avaliacao-nav">
         <span class="prev" onclick="prevSlide()">&#10094;</span>
         <span class="next" onclick="nextSlide()">&#10095;</span>
     </div>
 
-    <!-- Formulário para adicionar novo comentário -->
-    <div class="add-testimonial">
-        <h3>Deixe seu comentário</h3>
-        <form id="testimonialForm" onsubmit="addTestimonial(event)">
+    <!-- Formulário para adicionar nova avaliação -->
+    <div class="add-avaliacao">
+        <h3>Deixe sua Avaliação</h3>
+        <form id="avaliacaoForm" onsubmit="addAvaliacao(event)">
             <input type="text" id="name" placeholder="Seu Nome" required>
             <input type="text" id="company" placeholder="Empresa (opcional)">
             <input type="email" id="email" placeholder="Seu E-mail" required>
-            <textarea id="comment" placeholder="Escreva seu comentário aqui..." required></textarea>
+            <textarea id="comment" placeholder="Escreva sua avaliação aqui..." required></textarea>
             <label for="rating">Dê uma nota:</label>
             <select id="rating" required>
                 <option value="1">1 estrela</option>
@@ -330,164 +428,117 @@
                 <option value="4">4 estrelas</option>
                 <option value="5">5 estrelas</option>
             </select>
-            <button type="submit">Enviar Comentário</button>
+            <button type="submit">Enviar Avaliação</button>
         </form>
         <p id="feedback" style="color: red; display: none;">Comentário considerado inapropriado.</p>
-        <p id="average-rating" style="font-weight: bold; margin-top: 10px;">Avaliação média: 5.0 estrelas</p>
+        <p id="average-rating" class="average-rating">Avaliação média: 5.0 estrelas</p>
     </div>
 </section>
 
-<style>
-    /* Estilo mais compacto para a seção de comentários */
-    .testimonials {
-        padding: 10px;
-    }
-
-    .testimonial-slider {
-        max-height: 200px;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .testimonial-item {
-        padding: 10px;
-        font-size: 0.9em;
-    }
-
-    .testimonial-nav {
-        font-size: 1.5em;
-        top: 45%;
-    }
-
-    .add-testimonial {
-        background-color: rgba(255, 255, 255, 0.8);
-        border-radius: 10px;
-        padding: 15px;
-        margin-top: 15px;
-        text-align: center;
-        font-size: 0.9em;
-    }
-
-    .add-testimonial h3 {
-        font-size: 1em;
-        color: var(--laranja);
-    }
-
-    .add-testimonial input, .add-testimonial textarea, .add-testimonial select, .add-testimonial button {
-        width: 100%;
-        margin-top: 8px;
-        padding: 8px;
-        border-radius: 5px;
-        border: 1px solid #ddd;
-        font-size: 0.9em;
-    }
-
-    .add-testimonial button {
-        background-color: var(--laranja);
-        color: #fff;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        font-weight: bold;
-        font-size: 0.9em;
-    }
-
-    .add-testimonial button:hover {
-        background-color: var(--vermelho);
-    }
-
-    .delete-btn {
-        color: #ff0000;
-        font-size: 0.8em;
-        cursor: pointer;
-    }
-</style>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
 
 <script>
-    // Carregar comentários e controle de carrossel
+    // Configuração do Firebase
+    const firebaseConfig = {
+        apiKey: "AIzaSyBJ0clw0drMXoGyhK13pluP_TTH_pBZSbQ",
+        authDomain: "retiblocos-c175c.firebaseapp.com",
+        projectId: "retiblocos-c175c",
+        storageBucket: "retiblocos-c175c.appspot.com",
+        messagingSenderId: "937580227378",
+        appId: "1:937580227378:web:YOUR_APP_ID"  // Substitua "YOUR_APP_ID" pela chave de app do seu Firebase
+    };
+
+    // Inicializa o Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
     let currentIndex = 0;
 
     function showSlide(index) {
-        const testimonials = document.querySelectorAll('.testimonial-item');
-        testimonials.forEach((item, i) => {
+        const avaliacoes = document.querySelectorAll('.avaliacao-item');
+        avaliacoes.forEach((item, i) => {
             item.style.display = i === index ? 'block' : 'none';
         });
     }
 
     function nextSlide() {
-        const testimonials = document.querySelectorAll('.testimonial-item');
-        currentIndex = (currentIndex + 1) % testimonials.length;
+        const avaliacoes = document.querySelectorAll('.avaliacao-item');
+        currentIndex = (currentIndex + 1) % avaliacoes.length;
         showSlide(currentIndex);
     }
 
     function prevSlide() {
-        const testimonials = document.querySelectorAll('.testimonial-item');
-        currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+        const avaliacoes = document.querySelectorAll('.avaliacao-item');
+        currentIndex = (currentIndex - 1 + avaliacoes.length) % avaliacoes.length;
         showSlide(currentIndex);
     }
 
-    function loadTestimonials() {
-        const testimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
-        const testimonialSlider = document.getElementById('testimonialSlider');
-        testimonialSlider.innerHTML = '';
-        testimonials.forEach((testimonial, index) => {
-            const testimonialItem = document.createElement("div");
-            testimonialItem.classList.add("testimonial-item");
-            testimonialItem.innerHTML = `
-                <p>“${testimonial.comment}”</p>
-                <h4>– ${testimonial.name}${testimonial.company ? ', ' + testimonial.company : ''}</h4>
-                <span class="delete-btn" onclick="deleteTestimonial(${index})">🗑️ Excluir</span>
-            `;
-            testimonialSlider.appendChild(testimonialItem);
+    function loadAvaliacoes() {
+        db.collection("avaliacoes").orderBy("timestamp", "desc").get().then((querySnapshot) => {
+            const avaliacoesSlider = document.getElementById('avaliacoesSlider');
+            avaliacoesSlider.innerHTML = '';
+            querySnapshot.forEach((doc) => {
+                const avaliacao = doc.data();
+                const avaliacoesItem = document.createElement("div");
+                avaliacoesItem.classList.add("avaliacao-item");
+                avaliacoesItem.innerHTML = `
+                    <p>“${avaliacao.comment}”</p>
+                    <h4>– ${avaliacao.name}${avaliacao.company ? ', ' + avaliacao.company : ''}</h4>
+                    <span class="delete-btn" onclick="deleteAvaliacao('${doc.id}')">🗑️ Excluir</span>
+                `;
+                avaliacoesSlider.appendChild(avaliacoesItem);
+            });
+            updateAverageRating();
+            showSlide(currentIndex);
         });
-        updateAverageRating();
-        showSlide(currentIndex);
     }
 
-    function addTestimonial(event) {
+    function addAvaliacao(event) {
         event.preventDefault();
         const name = document.getElementById('name').value;
         const company = document.getElementById('company').value;
         const comment = document.getElementById('comment').value;
         const rating = parseInt(document.getElementById('rating').value);
-        const feedback = document.getElementById('feedback');
-        
-        const inappropriateWords = ["ruim", "péssimo", "horrível", "lixo"];
-        const containsBadWord = inappropriateWords.some(word => comment.toLowerCase().includes(word));
-        
-        if (containsBadWord) {
-            feedback.style.display = "block";
-        } else {
-            feedback.style.display = "none";
-            const testimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
-            testimonials.push({ name, company, comment, rating });
-            localStorage.setItem('testimonials', JSON.stringify(testimonials));
-            loadTestimonials();
-            document.getElementById('testimonialForm').reset();
-        }
+
+        db.collection("avaliacoes").add({
+            name: name,
+            company: company,
+            comment: comment,
+            rating: rating,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        }).then(() => {
+            console.log("Avaliação adicionada com sucesso!");
+            loadAvaliacoes();
+            document.getElementById('avaliacaoForm').reset();
+        }).catch((error) => {
+            console.error("Erro ao adicionar avaliação: ", error);
+        });
     }
 
     function updateAverageRating() {
-        const testimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
-        if (testimonials.length === 0) return;
-        
-        const sum = testimonials.reduce((acc, t) => acc + t.rating, 0);
-        const avg = (sum / testimonials.length).toFixed(1);
-        document.getElementById('average-rating').textContent = `Avaliação média: ${avg} estrelas`;
+        db.collection("avaliacoes").get().then((querySnapshot) => {
+            const ratings = querySnapshot.docs.map(doc => doc.data().rating);
+            const sum = ratings.reduce((acc, rating) => acc + rating, 0);
+            const avg = (sum / ratings.length).toFixed(1);
+            document.getElementById('average-rating').textContent = `Avaliação média: ${avg} estrelas`;
+        });
     }
 
-    function deleteTestimonial(index) {
-        const testimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
-        testimonials.splice(index, 1);
-        localStorage.setItem('testimonials', JSON.stringify(testimonials));
-        loadTestimonials();
+    function deleteAvaliacao(id) {
+        db.collection("avaliacoes").doc(id).delete().then(() => {
+            console.log("Avaliação excluída!");
+            loadAvaliacoes();
+        }).catch((error) => {
+            console.error("Erro ao excluir avaliação: ", error);
+        });
     }
 
-    document.addEventListener('DOMContentLoaded', loadTestimonials);
+    document.addEventListener('DOMContentLoaded', loadAvaliacoes);
 </script>
 
-
-
-
+</body>
+</html>
 
 
     <!-- Seção de Localização -->
