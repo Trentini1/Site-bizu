@@ -1,13 +1,12 @@
-<!-- pagina2.html -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retiblocos - Página Secundária</title>
+    <title>Retiblocos - Projetos Realizados</title>
     <link rel="icon" href="mini-logo.png" type="image/png">
     <style>
-        /* Paleta de cores e estilos básicos */
+        /* Paleta de cores */
         :root {
             --azul-escuro: #006699;
             --laranja: #FF6600;
@@ -28,7 +27,7 @@
             background-blend-mode: multiply;
         }
 
-        /* Navbar fixa com espaçamento */
+        /* Navbar fixa */
         .navbar {
             position: fixed;
             top: 0;
@@ -59,7 +58,7 @@
             border-radius: 10px;
             padding: 20px 30px;
             margin: 80px auto 20px;
-            max-width: 80%;
+            max-width: 90%;
             color: #000;
             transition: transform 0.3s ease;
         }
@@ -68,49 +67,124 @@
             transform: scale(1.02);
         }
 
-        /* Cabeçalho e logo */
-        .header-compact {
-            margin-top: 60px;
-            background-color: rgba(255, 255, 255, 0.4);
-            padding: 10px 20px;
-            max-width: 100%;
+        h2 {
             text-align: center;
+            color: var(--laranja);
+            margin-bottom: 20px;
         }
 
-        .header-compact img {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            display: block;
-            margin: auto;
-            object-fit: contain;
+        /* Seção de Galeria de Fotos */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
         }
 
-        .header-compact p {
+        .gallery img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Linha do tempo */
+        .timeline {
+            position: relative;
+            max-width: 700px;
+            margin: 40px auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--laranja);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 20px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            background-color: white;
+            border: 4px solid var(--laranja);
+            top: 30px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item.left {
+            left: 0;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-item-content {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 6px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item-content h4 {
+            color: var(--azul-escuro);
+        }
+
+        /* Seção de Depoimentos */
+        .depoimentos {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .depoimento-item {
+            width: 250px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .depoimento-item:hover {
+            transform: scale(1.05);
+        }
+
+        .depoimento-item p {
+            font-style: italic;
             font-size: 0.9em;
         }
 
-        h2 {
+        .depoimento-item h4 {
+            margin-top: 10px;
+            font-size: 1em;
+            font-weight: bold;
             color: var(--laranja);
-            text-align: center;
-        }
-
-        /* Ícone do WhatsApp */
-        .whatsapp-icon {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background-image: url('whatsapp-logo.png');
-            background-size: cover;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            z-index: 10;
-        }
-
-        .whatsapp-icon:hover {
-            transform: scale(1.1);
         }
     </style>
 </head>
@@ -119,19 +193,80 @@
     <!-- Navbar -->
     <div class="navbar">
         <a href="index.html">Página Principal</a>
-        <a href="pagina2.html">Nova Página</a>
+        <a href="pagina2.html">Projetos Realizados</a>
     </div>
 
-    <!-- Cabeçalho e logo -->
+    <!-- Cabeçalho -->
     <header class="content header-compact">
-        <img src="logo-retiblocos.png" alt="Retiblocos - Retífica Diesel Pesado">
-        <p>Bem-vindo à página secundária da Retiblocos.</p>
+        <h2>Projetos Realizados pela Retiblocos</h2>
+        <p>Veja alguns dos nossos principais trabalhos e depoimentos dos nossos clientes satisfeitos.</p>
     </header>
 
-    <!-- Conteúdo Principal -->
+    <!-- Seção de Galeria de Fotos -->
     <section class="content">
-        <h2>Conteúdo da Nova Página</h2>
-        <p>Aqui você pode adicionar o conteúdo desejado para a página secundária. Esse espaço pode ser utilizado para informações detalhadas, novos serviços, ou qualquer outro conteúdo adicional.</p>
+        <h2>Galeria de Fotos</h2>
+        <div class="gallery">
+            <img src="motor1.jpg" alt="Motor Recuperado">
+            <img src="motor2.jpg" alt="Motor Diesel">
+            <img src="motor3.jpg" alt="Motor Industrial">
+            <img src="motor4.jpg" alt="Projeto Completo">
+            <img src="motor5.jpg" alt="Reparação Avançada">
+            <img src="motor6.jpg" alt="Motor Pesado">
+        </div>
+    </section>
+
+    <!-- Seção de Linha do Tempo -->
+    <section class="content">
+        <h2>Nossa Trajetória</h2>
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-item-content">
+                    <h4>2007 - Fundação</h4>
+                    <p>Início das atividades da Retiblocos, focada em retífica de motores diesel pesado.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-item-content">
+                    <h4>2012 - Expansão de Serviços</h4>
+                    <p>Incorporação de novos serviços e início de operações em outros setores.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-item-content">
+                    <h4>2018 - Novo Centro Técnico</h4>
+                    <p>Abertura de um novo centro com tecnologia de ponta para motores industriais.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-item-content">
+                    <h4>2023 - Reconhecimento de Qualidade</h4>
+                    <p>Recebimento de certificações de qualidade e melhoria contínua em processos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Depoimentos -->
+    <section class="content">
+        <h2>O Que Nossos Clientes Dizem</h2>
+        <div class="depoimentos">
+            <div class="depoimento-item">
+                <p>"O serviço foi impecável! Retornaremos sempre que precisarmos."</p>
+                <h4>– Pedro Almeida</h4>
+            </div>
+            <div class="depoimento-item">
+                <p>"Alta qualidade e excelente atendimento! Recomendo a todos."</p>
+                <h4>– Luana Souza</h4>
+            </div>
+            <div class="depoimento-item">
+                <p>"Tive uma ótima experiência com a Retiblocos. Equipe muito profissional."</p>
+                <h4>– Roberto Lima</h4>
+            </div>
+            <div class="depoimento-item">
+                <p>"A retífica foi perfeita, e o suporte técnico sempre disponível."</p>
+                <h4>– Fernanda Costa</h4>
+            </div>
+        </div>
     </section>
 
     <!-- Rodapé -->
@@ -150,9 +285,6 @@
             Website developed by Trentini
         </div>
     </footer>
-
-    <!-- Ícone flutuante do WhatsApp -->
-    <a href="https://wa.me/554130859910" target="_blank" class="whatsapp-icon"></a>
 
 </body>
 </html>
