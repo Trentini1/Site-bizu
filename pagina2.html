@@ -285,29 +285,16 @@
     <!-- JHONN DEERE -->
    <div class="videos-section">
     <h2 class="videos-title">Projetos de Retífica Realizados</h2>
-    <div class="videos-container">
-        <span class="arrow prev" onclick="prevVideo()">&#10094;</span>
-        
-        <div class="video destaque">
+    <div class="video-container">
+        <div class="video-wrapper rotate" id="videoWrapper">
             <video controls>
                 <source src="jhondeere.mp4" type="video/mp4">
                 Seu navegador não suporta a tag de vídeo.
             </video>
-            <h4>Motor John Deere</h4>
-            <p>Descrição: Retífica completa com alta precisão e durabilidade.</p>
+            <h4 id="videoTitle">Motor John Deere</h4>
+            <p id="videoDescription">Descrição: Retífica completa com alta precisão e durabilidade.</p>
         </div>
-        
-        <div class="video">
-            <video controls>
-                <source src="cummins.mp4" type="video/mp4">
-                Seu navegador não suporta a tag de vídeo.
-            </video>
-            <h4>Motor Cummins ISB 6CC</h4>
-            <p>Descrição: Retífica com padrões elevados de eficiência.</p>
-        </div>
-
-        <!-- Adicione mais vídeos da mesma maneira -->
-        
+        <span class="arrow prev" onclick="prevVideo()">&#10094;</span>
         <span class="arrow next" onclick="nextVideo()">&#10095;</span>
     </div>
 </div>
@@ -327,42 +314,29 @@
         margin-bottom: 20px;
     }
 
-    .videos-container {
+    .video-container {
+        position: relative;
+        width: 100%;
+        max-width: 500px;
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .video-wrapper {
         position: relative;
-        width: 90%;
-        max-width: 800px;
-    }
-
-    .video {
-        flex: 1;
-        padding: 15px;
-        background-color: rgba(255, 255, 255, 0.8);
-        border-radius: 10px;
-        margin: 0 10px;
-        min-width: 200px;
-        opacity: 0.5;
-        transition: transform 0.3s ease, opacity 0.3s ease;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        text-align: center;
-    }
-
-    .video video {
         width: 100%;
-        max-width: 300px; /* Ajuste para o tamanho desejado */
+        transition: transform 0.6s ease, opacity 0.6s ease;
+    }
+
+    .video-wrapper video {
+        width: 100%;
         border-radius: 10px;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    .video.destaque {
-        transform: scale(1.2);
-        opacity: 1;
-    }
-
-    .video h4 {
-        color: #FF6600; /* Cor laranja */
+    .video-wrapper h4 {
+        color: #FF6600;
         margin-top: 10px;
     }
 
@@ -372,36 +346,78 @@
         cursor: pointer;
         user-select: none;
         transition: color 0.3s ease;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .arrow.prev {
+        left: -40px;
+    }
+
+    .arrow.next {
+        right: -40px;
     }
 
     .arrow:hover {
         color: #CC3333;
     }
+
+    /* Animação de rotação */
+    .rotate-exit {
+        transform: rotateY(90deg);
+        opacity: 0;
+    }
+
+    .rotate-enter {
+        transform: rotateY(-90deg);
+        opacity: 0;
+    }
+
+    .rotate-enter-active, .rotate-exit-active {
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
 </style>
 
 <script>
-    let currentVideoIndex = 0;
-    const videos = document.querySelectorAll('.video');
+    // Array de vídeos e informações
+    const videos = [
+        { src: "jhondeere.mp4", title: "Motor John Deere", description: "Descrição: Retífica completa com alta precisão e durabilidade." },
+        { src: "cummins.mp4", title: "Motor Cummins ISB 6CC", description: "Descrição: Retífica com padrões elevados de eficiência." },
+        // Adicione mais vídeos aqui
+    ];
 
-    function showVideo(index) {
-        videos.forEach((video, i) => {
-            video.classList.remove('destaque');
-            if (i === index) video.classList.add('destaque');
-        });
+    let currentVideoIndex = 0;
+    const videoWrapper = document.getElementById('videoWrapper');
+    const videoElement = videoWrapper.querySelector('video');
+    const videoTitle = document.getElementById('videoTitle');
+    const videoDescription = document.getElementById('videoDescription');
+
+    function updateVideo(index) {
+        videoElement.pause(); // Pausa o vídeo antes de trocar
+        videoWrapper.classList.add('rotate-exit');
+        setTimeout(() => {
+            videoElement.src = videos[index].src;
+            videoTitle.textContent = videos[index].title;
+            videoDescription.textContent = videos[index].description;
+            videoWrapper.classList.remove('rotate-exit');
+            videoWrapper.classList.add('rotate-enter');
+            setTimeout(() => videoWrapper.classList.remove('rotate-enter'), 600);
+        }, 600); // Tempo da animação
     }
 
     function nextVideo() {
         currentVideoIndex = (currentVideoIndex + 1) % videos.length;
-        showVideo(currentVideoIndex);
+        updateVideo(currentVideoIndex);
     }
 
     function prevVideo() {
         currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
-        showVideo(currentVideoIndex);
+        updateVideo(currentVideoIndex);
     }
-
-    document.addEventListener('DOMContentLoaded', () => showVideo(currentVideoIndex));
 </script>
+
 
 
     <!-- Rodapé -->
