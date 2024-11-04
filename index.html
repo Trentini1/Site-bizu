@@ -261,15 +261,35 @@
             <h4>– João Silva</h4>
             <div class="stars">★★★★★</div>
         </div>
+        <div class="avaliacao-item previous">
+            <p>"Serviço confiável e rápido. Superou minhas expectativas!"</p>
+            <h4>– Ana Costa</h4>
+            <div class="stars">★★★★★</div>
+        </div>
         <div class="avaliacao-item active">
-            <p>"Atendimento rápido e eficiente, realmente recomendam soluções que atendem nossa necessidade."</p>
+            <p>"Atendimento eficiente, resolveram meu problema com muita precisão."</p>
             <h4>– Maria Oliveira</h4>
             <div class="stars">★★★★☆</div>
         </div>
         <div class="avaliacao-item next">
-            <p>"Peças de alta qualidade e ótimos preços. Minha frota agora está sempre pronta para rodar!"</p>
+            <p>"Peças de alta qualidade e ótimos preços. Minha frota está sempre pronta para rodar!"</p>
             <h4>– Carlos Pereira</h4>
             <div class="stars">★★★★★</div>
+        </div>
+        <div class="avaliacao-item next">
+            <p>"Equipe muito profissional, e o serviço foi impecável!"</p>
+            <h4>– Paulo Fernandes</h4>
+            <div class="stars">★★★★☆</div>
+        </div>
+        <div class="avaliacao-item next">
+            <p>"A retífica é de altíssimo nível. Recomendo fortemente!"</p>
+            <h4>– Laura Mendes</h4>
+            <div class="stars">★★★★★</div>
+        </div>
+        <div class="avaliacao-item next">
+            <p>"Ótimo atendimento e excelente serviço!"</p>
+            <h4>– Roberto Lima</h4>
+            <div class="stars">★★★★☆</div>
         </div>
     </div>
     <div class="avaliacao-nav">
@@ -283,14 +303,14 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 15px;
+        gap: 10px;
     }
 
     .avaliacoes-slider {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 10px;
+        gap: 5px;
         position: relative;
         width: 100%;
         max-width: 800px;
@@ -298,8 +318,8 @@
     }
 
     .avaliacao-item {
-        width: 250px;
-        padding: 15px;
+        width: 200px;
+        padding: 10px;
         background-color: rgba(255, 255, 255, 0.8);
         border-radius: 10px;
         text-align: center;
@@ -316,32 +336,32 @@
     }
 
     .avaliacao-item.previous {
-        opacity: 0.5;
-        transform: translateX(-120px) scale(0.9);
+        opacity: 0.7;
+        transform: translateX(-100px) scale(0.9);
         z-index: 0;
     }
 
     .avaliacao-item.next {
-        opacity: 0.5;
-        transform: translateX(120px) scale(0.9);
+        opacity: 0.7;
+        transform: translateX(100px) scale(0.9);
         z-index: 0;
     }
 
     .avaliacao-item p {
         font-style: italic;
-        font-size: 1em;
+        font-size: 0.9em;
         margin: 0;
     }
 
     .avaliacao-item h4 {
-        margin-top: 10px;
+        margin-top: 8px;
         font-size: 1em;
         font-weight: bold;
         color: var(--laranja);
     }
 
     .stars {
-        font-size: 1.2em;
+        font-size: 1em;
         color: #FFD700; /* cor dourada para as estrelas */
         margin-top: 5px;
     }
@@ -365,7 +385,7 @@
 </style>
 
 <script>
-    let currentIndex = 1;
+    let currentIndex = 2; // Define a posição inicial para destacar o terceiro comentário
     const avaliacoes = document.querySelectorAll('.avaliacao-item');
 
     function updateSlides() {
