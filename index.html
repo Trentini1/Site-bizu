@@ -93,65 +93,36 @@
             color: var(--laranja);
         }
 
-        /* Estilo para a seção de marcas */
-        .marcas {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .marcas img {
-            max-width: 120px;
-            height: auto;
-            cursor: pointer;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
-        }
-
-        .marcas img:hover {
-            transform: scale(1.15) rotate(5deg);
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Botão de contato */
-        .button {
-            background-color: var(--laranja);
-            color: var(--branco);
-            padding: 12px 25px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1em;
-            text-decoration: none;
-            display: inline-block;
-            transition: background-color 0.2s ease;
-            cursor: pointer;
-        }
-
-        .button:hover {
-            background-color: var(--vermelho);
-        }
-
-        /* Seção de serviços */
-        .services {
+        /* Seção de Avaliações */
+        .avaliacoes {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             margin-top: 20px;
         }
 
-        .service-item {
+        .avaliacao-item {
             background-color: var(--cinza);
             padding: 15px;
             border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
-            transition: transform 0.3s ease;
         }
 
-        .service-item:hover {
+        .avaliacao-item:hover {
             transform: scale(1.05);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .avaliacao-item h4 {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .avaliacao-item p {
+            margin: 10px 0;
+            font-style: italic;
         }
 
         /* Ícone do WhatsApp */
@@ -190,41 +161,34 @@
         <p>Especialistas em Retífica Diesel Pesado - Caterpillar, Cummins, Volvo e Mercedes</p>
     </header>
 
-    <!-- Seção de Sobre Nós -->
-    <section class="content">
-        <h2>Sobre Nós</h2>
-        <p>A Retiblocos atua desde 2007 na retífica de motores diesel pesado, oferecendo serviços de excelência para motores de geradores e caminhões. Somos especializados em marcas renomadas como Caterpillar, Cummins, Volvo e Mercedes.</p>
-    </section>
-
-    <!-- Seção de Marcas -->
-    <section class="content marcas" id="marcas">
-        <h2>Marcas</h2>
-        <div>
-            <img src="logo-caterpillar.png" alt="Caterpillar">
-            <img src="logo-cummins.png" alt="Cummins">
-            <img src="logo-volvo.png" alt="Volvo">
-            <img src="logo-mercedes.png" alt="Mercedes">
-        </div>
-    </section>
-
-    <!-- Seção de Serviços -->
-    <section class="content services" id="servicos">
-        <h2>Serviços</h2>
-        <div class="service-item">
-            <h3>Retífica de Motores</h3>
-            <p>Realizamos retífica completa de motores diesel com equipamentos de alta tecnologia.</p>
-        </div>
-        <div class="service-item">
-            <h3>Venda de Peças</h3>
-            <p>Peças de reposição originais para Caterpillar, Cummins, Volvo e Mercedes.</p>
-        </div>
-        <div class="service-item">
-            <h3>Remanufatura</h3>
-            <p>Remanufatura de sistemas de injeção a diesel, garantindo eficiência.</p>
-        </div>
-        <div class="service-item">
-            <h3>Suporte Técnico</h3>
-            <p>Consultoria técnica especializada para diagnóstico e manutenção de motores.</p>
+    <!-- Seção de Avaliações -->
+    <section class="content" id="avaliacoes">
+        <h2>Avaliações dos Clientes</h2>
+        <div class="avaliacoes">
+            <div class="avaliacao-item">
+                <p>"Uma excelente retífica! Meu caminhão está como novo."</p>
+                <h4>- João Silva</h4>
+            </div>
+            <div class="avaliacao-item">
+                <p>"Serviço de alta qualidade e atendimento impecável."</p>
+                <h4>- Maria Oliveira</h4>
+            </div>
+            <div class="avaliacao-item">
+                <p>"Ótimo trabalho na recuperação do motor, recomendo a todos."</p>
+                <h4>- Carlos Souza</h4>
+            </div>
+            <div class="avaliacao-item">
+                <p>"Equipe super profissional, meu motor está rodando liso."</p>
+                <h4>- Ana Pereira</h4>
+            </div>
+            <div class="avaliacao-item">
+                <p>"A Retiblocos é a melhor opção para quem busca qualidade."</p>
+                <h4>- Paulo Fernandes</h4>
+            </div>
+            <div class="avaliacao-item">
+                <p>"Fiquei muito satisfeito com o serviço de retífica, parabéns!"</p>
+                <h4>- Luiza Martins</h4>
+            </div>
         </div>
     </section>
 
