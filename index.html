@@ -93,36 +93,60 @@
             color: var(--laranja);
         }
 
-        /* Seção de Avaliações */
-        .avaliacoes {
+        /* Seção de Marcas */
+        .marcas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .marcas img {
+            width: 100px;
+            height: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+            border-radius: 5px;
+        }
+
+        .marcas img:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Seção de Serviços */
+        .services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin-top: 20px;
         }
 
-        .avaliacao-item {
+        .service-item {
             background-color: var(--cinza);
-            padding: 15px;
+            padding: 20px;
             border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            position: relative;
         }
 
-        .avaliacao-item:hover {
+        .service-item:hover {
             transform: scale(1.05);
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
         }
 
-        .avaliacao-item h4 {
-            margin-top: 10px;
-            font-weight: bold;
+        .service-item h3 {
+            color: var(--laranja);
+            margin-bottom: 10px;
         }
 
-        .avaliacao-item p {
-            margin: 10px 0;
-            font-style: italic;
+        .service-item p {
+            color: #333;
+            font-size: 0.9em;
         }
 
         /* Ícone do WhatsApp */
@@ -181,79 +205,23 @@
     <!-- Seção de Serviços -->
     <section class="content services" id="servicos">
         <h2>Serviços</h2>
-        <div class="service-item">
+        <a href="https://wa.me/554130859910" target="_blank" class="service-item">
             <h3>Retífica de Motores</h3>
             <p>Realizamos retífica completa de motores diesel com equipamentos de alta tecnologia.</p>
-        </div>
-        <div class="service-item">
+        </a>
+        <a href="https://wa.me/554130859910" target="_blank" class="service-item">
             <h3>Venda de Peças</h3>
             <p>Peças de reposição originais para Caterpillar, Cummins, Volvo e Mercedes.</p>
-        </div>
-        <div class="service-item">
+        </a>
+        <a href="https://wa.me/554130859910" target="_blank" class="service-item">
             <h3>Remanufatura</h3>
             <p>Remanufatura de sistemas de injeção a diesel, garantindo eficiência.</p>
-        </div>
-        <div class="service-item">
+        </a>
+        <a href="https://wa.me/554130859910" target="_blank" class="service-item">
             <h3>Suporte Técnico</h3>
             <p>Consultoria técnica especializada para diagnóstico e manutenção de motores.</p>
-        </div>
-    </section>
-
-    <!-- Seção de Avaliações -->
-    <section class="content" id="avaliacoes">
-        <h2>Avaliações dos Clientes</h2>
-        <div class="avaliacoes">
-            <div class="avaliacao-item">
-                <p>"Uma excelente retífica! Meu caminhão está como novo."</p>
-                <h4>- João Silva</h4>
-            </div>
-            <div class="avaliacao-item">
-                <p>"Serviço de alta qualidade e atendimento impecável."</p>
-                <h4>- Maria Oliveira</h4>
-            </div>
-            <div class="avaliacao-item">
-                <p>"Ótimo trabalho na recuperação do motor, recomendo a todos."</p>
-                <h4>- Carlos Souza</h4>
-            </div>
-            <div class="avaliacao-item">
-                <p>"Equipe super profissional, meu motor está rodando liso."</p>
-                <h4>- Ana Pereira</h4>
-            </div>
-            <div class="avaliacao-item">
-                <p>"A Retiblocos é a melhor opção para quem busca qualidade."</p>
-                <h4>- Paulo Fernandes</h4>
-            </div>
-            <div class="avaliacao-item">
-                <p>"Fiquei muito satisfeito com o serviço de retífica, parabéns!"</p>
-                <h4>- Luiza Martins</h4>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção de Localização -->
-    <section class="content" id="contato">
-        <h2>Localização</h2>
-        <a href="https://www.google.com.br/maps/place/Retiblocos+Recuperação+De+Peças+De+Motores/@-25.5588684,-49.2737771,15z/data=!4m6!3m5!1s0x94dcfb6f45c24819:0xdda8cabfb32e092!8m2!3d-25.5553008!4d-49.2719035!16s%2Fg%2F11fzry88vd?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-            <img src="imagem-mapa.png" alt="Mapa da localização da Retiblocos" style="width: 75%; height: auto; border-radius: 10px;">
         </a>
     </section>
-
-    <!-- Rodapé -->
-    <footer>
-        <div class="footer-contact">
-            <h2>Contato</h2>
-            <ul>
-                <li>Fixo: <a href="https://wa.me/554130859910" target="_blank">(41) 3085-9910</a> (Erick, Gerente Adm)</li>
-                <li>Celular: <a href="https://wa.me/5541999741204" target="_blank">(41) 99741-204</a> (Fernando, Proprietário)</li>
-                <li>Email: <a href="mailto:escritorio.retiblocos@hotmail.com">escritorio.retiblocos@hotmail.com</a></li>
-                <li>CNPJ: 53.659.638/0001-03</li>
-            </ul>
-        </div>
-        <div class="footer-bottom" style="text-align: right; font-size: 0.9em; color: #555;">
-            &copy; 2024 Retiblocos. All rights reserved. <br>
-            Website developed by Trentini
-        </div>
-    </footer>
 
     <!-- Ícone flutuante do WhatsApp -->
     <a href="https://wa.me/554130859910" target="_blank" class="whatsapp-icon"></a>
