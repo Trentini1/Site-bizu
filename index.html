@@ -252,22 +252,22 @@
         </a>
     </section>
 
-    <!-- Seção de Avaliações -->
+   <!-- Seção de Avaliações -->
 <section class="content avaliacoes" id="avaliacoes">
     <h2>Avaliações dos Clientes</h2>
     <div class="avaliacoes-slider" id="avaliacoesSlider">
-        <div class="avaliacao-item active">
-            <p>“Excelente retífica! Serviço de alta qualidade e muita competência!”</p>
+        <div class="avaliacao-item previous">
+            <p>"Excelente retífica! Serviço de alta qualidade e muita competência!"</p>
             <h4>– João Silva</h4>
             <div class="stars">★★★★★</div>
         </div>
-        <div class="avaliacao-item">
-            <p>“Atendimento rápido e eficiente, realmente recomendam soluções que atendem nossa necessidade.”</p>
+        <div class="avaliacao-item active">
+            <p>"Atendimento rápido e eficiente, realmente recomendam soluções que atendem nossa necessidade."</p>
             <h4>– Maria Oliveira</h4>
             <div class="stars">★★★★☆</div>
         </div>
-        <div class="avaliacao-item">
-            <p>“Peças de alta qualidade e ótimos preços. Minha frota agora está sempre pronta para rodar!”</p>
+        <div class="avaliacao-item next">
+            <p>"Peças de alta qualidade e ótimos preços. Minha frota agora está sempre pronta para rodar!"</p>
             <h4>– Carlos Pereira</h4>
             <div class="stars">★★★★★</div>
         </div>
@@ -287,28 +287,45 @@
     }
 
     .avaliacoes-slider {
-        width: 100%;
-        max-width: 600px;
-        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
         position: relative;
+        width: 100%;
+        max-width: 400px;
     }
 
     .avaliacao-item {
-        display: none;
+        width: 100%;
         padding: 15px;
         background-color: rgba(255, 255, 255, 0.8);
         border-radius: 10px;
         text-align: center;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        opacity: 0;
-        transform: translateX(-100%);
-        transition: all 0.4s ease-in-out;
+        opacity: 0.5;
+        transform: scale(0.9);
+        transition: all 0.4s ease;
+        position: absolute;
+        left: 0;
     }
 
     .avaliacao-item.active {
-        display: block;
         opacity: 1;
-        transform: translateX(0);
+        transform: scale(1);
+        z-index: 1;
+    }
+
+    .avaliacao-item.previous {
+        opacity: 0.5;
+        transform: translateY(-120px) scale(0.9);
+        z-index: 0;
+    }
+
+    .avaliacao-item.next {
+        opacity: 0.5;
+        transform: translateY(120px) scale(0.9);
+        z-index: 0;
     }
 
     .avaliacao-item p {
@@ -346,42 +363,38 @@
     .avaliacao-nav span:hover {
         color: var(--vermelho);
     }
-
-    /* Efeito de hover para destacar a avaliação */
-    .avaliacao-item:hover {
-        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-        transform: scale(1.02);
-    }
 </style>
 
 <script>
-    let currentIndex = 0;
+    let currentIndex = 1;
+    const avaliacoes = document.querySelectorAll('.avaliacao-item');
 
-    function showSlide(index) {
-        const avaliacoes = document.querySelectorAll('.avaliacao-item');
-        avaliacoes.forEach((item, i) => {
-            item.classList.remove('active');
-            if (i === index) {
+    function updateSlides() {
+        avaliacoes.forEach((item, index) => {
+            item.classList.remove('active', 'previous', 'next');
+            if (index === currentIndex) {
                 item.classList.add('active');
+            } else if (index === (currentIndex - 1 + avaliacoes.length) % avaliacoes.length) {
+                item.classList.add('previous');
+            } else if (index === (currentIndex + 1) % avaliacoes.length) {
+                item.classList.add('next');
             }
         });
     }
 
     function nextSlide() {
-        const avaliacoes = document.querySelectorAll('.avaliacao-item');
         currentIndex = (currentIndex + 1) % avaliacoes.length;
-        showSlide(currentIndex);
+        updateSlides();
     }
 
     function prevSlide() {
-        const avaliacoes = document.querySelectorAll('.avaliacao-item');
         currentIndex = (currentIndex - 1 + avaliacoes.length) % avaliacoes.length;
-        showSlide(currentIndex);
+        updateSlides();
     }
 
-    // Inicializa a exibição da primeira avaliação
+    // Inicializa a exibição dos slides
     document.addEventListener('DOMContentLoaded', () => {
-        showSlide(currentIndex);
+        updateSlides();
     });
 </script>
 
