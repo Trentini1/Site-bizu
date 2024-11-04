@@ -27,7 +27,7 @@
             background-blend-mode: multiply;
         }
 
-        /* Navbar fixa */
+        /* Navbar fixa com espaçamento */
         .navbar {
             position: fixed;
             top: 0;
@@ -50,13 +50,8 @@
         .navbar a:hover {
             color: var(--laranja);
         }
-<!-- Navbar -->
-<div class="navbar">
-    <a href="index.html">Página Principal</a>
-    <a href="pagina2.html">Nova Página</a>
-</div>
 
-        /* Áreas de conteúdo */
+        /* Estilos de áreas de conteúdo */
         .content, .cta, footer {
             background-color: rgba(255, 255, 255, 0.4);
             backdrop-filter: blur(5px);
@@ -171,46 +166,14 @@
         .whatsapp-icon:hover {
             transform: scale(1.1);
         }
-
-        /* Estilo da seção de Avaliações */
-        .avaliacoes {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .avaliacao-item {
-            background-color: rgba(255, 255, 255, 0.7);
-            padding: 15px;
-            border-radius: 8px;
-            width: 100%;
-            max-width: 600px;
-            text-align: center;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .avaliacao-item p {
-            font-style: italic;
-            font-size: 0.95em;
-        }
-
-        .avaliacao-item h4 {
-            margin-top: 8px;
-            font-size: 1em;
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
 
     <!-- Navbar -->
     <div class="navbar">
-        <a href="#sobre">Sobre Nós</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#marcas">Marcas</a>
-        <a href="#avaliacoes">Avaliações</a>
-        <a href="#contato">Contato</a>
+        <a href="index.html">Página Principal</a>
+        <a href="pagina2.html">Nova Página</a>
     </div>
 
     <!-- Cabeçalho e logo -->
@@ -257,178 +220,11 @@
         </a>
     </section>
 
-  <!-- Seção de Avaliações -->
-<section class="content avaliacoes" id="avaliacoes">
-    <h2>Avaliações dos Clientes</h2>
-    <div class="avaliacoes-slider" id="avaliacoesSlider">
-        <div class="avaliacao-item previous">
-            <p>"Excelente retífica! Serviço de alta qualidade e muita competência!"</p>
-            <h4>– João Silva</h4>
-            <div class="stars">★★★★★</div>
-        </div>
-        <div class="avaliacao-item previous">
-            <p>"Serviço confiável e rápido. Superou minhas expectativas!"</p>
-            <h4>– Ana Costa</h4>
-            <div class="stars">★★★★★</div>
-        </div>
-        <div class="avaliacao-item active">
-            <p>"Atendimento eficiente, resolveram meu problema com muita precisão."</p>
-            <h4>– Maria Oliveira</h4>
-            <div class="stars">★★★★☆</div>
-        </div>
-        <div class="avaliacao-item next">
-            <p>"Peças de alta qualidade e ótimos preços. Minha frota está sempre pronta para rodar!"</p>
-            <h4>– Carlos Pereira</h4>
-            <div class="stars">★★★★★</div>
-        </div>
-        <div class="avaliacao-item next">
-            <p>"Equipe muito profissional, e o serviço foi impecável!"</p>
-            <h4>– Paulo Fernandes</h4>
-            <div class="stars">★★★★☆</div>
-        </div>
-        <div class="avaliacao-item next">
-            <p>"A retífica é de altíssimo nível. Recomendo fortemente!"</p>
-            <h4>– Laura Mendes</h4>
-            <div class="stars">★★★★★</div>
-        </div>
-        <div class="avaliacao-item next">
-            <p>"Ótimo atendimento e excelente serviço!"</p>
-            <h4>– Roberto Lima</h4>
-            <div class="stars">★★★★☆</div>
-        </div>
-    </div>
-    <div class="avaliacao-nav">
-        <span class="prev" onclick="prevSlide()">&#10094;</span>
-        <span class="next" onclick="nextSlide()">&#10095;</span>
-    </div>
-</section>
-
-<style>
-    .avaliacoes {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .avaliacoes-slider {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-        position: relative;
-        width: 100%;
-        max-width: 800px;
-        overflow: hidden;
-    }
-
-    .avaliacao-item {
-        width: 200px;
-        padding: 10px;
-        background-color: rgba(255, 255, 255, 0.8);
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        opacity: 0.5;
-        transform: scale(0.9);
-        transition: all 0.4s ease;
-    }
-
-    .avaliacao-item.active {
-        opacity: 1;
-        transform: scale(1);
-        z-index: 1;
-    }
-
-    .avaliacao-item.previous {
-        opacity: 0.7;
-        transform: translateX(-100px) scale(0.9);
-        z-index: 0;
-    }
-
-    .avaliacao-item.next {
-        opacity: 0.7;
-        transform: translateX(100px) scale(0.9);
-        z-index: 0;
-    }
-
-    .avaliacao-item p {
-        font-style: italic;
-        font-size: 0.9em;
-        margin: 0;
-    }
-
-    .avaliacao-item h4 {
-        margin-top: 8px;
-        font-size: 1em;
-        font-weight: bold;
-        color: var(--laranja);
-    }
-
-    .stars {
-        font-size: 1em;
-        color: #FFD700; /* cor dourada para as estrelas */
-        margin-top: 5px;
-    }
-
-    .avaliacao-nav {
-        font-size: 1.5em;
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    .avaliacao-nav span {
-        cursor: pointer;
-        color: #FF6600;
-        margin: 0 10px;
-        transition: color 0.3s ease;
-    }
-
-    .avaliacao-nav span:hover {
-        color: var(--vermelho);
-    }
-</style>
-
-<script>
-    let currentIndex = 2; // Define a posição inicial para destacar o terceiro comentário
-    const avaliacoes = document.querySelectorAll('.avaliacao-item');
-
-    function updateSlides() {
-        avaliacoes.forEach((item, index) => {
-            item.classList.remove('active', 'previous', 'next');
-            if (index === currentIndex) {
-                item.classList.add('active');
-            } else if (index === (currentIndex - 1 + avaliacoes.length) % avaliacoes.length) {
-                item.classList.add('previous');
-            } else if (index === (currentIndex + 1) % avaliacoes.length) {
-                item.classList.add('next');
-            }
-        });
-    }
-
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % avaliacoes.length;
-        updateSlides();
-    }
-
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + avaliacoes.length) % avaliacoes.length;
-        updateSlides();
-    }
-
-    // Inicializa a exibição dos slides
-    document.addEventListener('DOMContentLoaded', () => {
-        updateSlides();
-    });
-</script>
-
-
-
-   <!-- Seção de Localização -->
+    <!-- Seção de Localização -->
     <section class="content" id="contato">
         <h2>Localização</h2>
-        <a href="https://www.google.com.br/maps/place/Retiblocos+Recuperação+De+Peças+De+Motores/@-25.5588684,-49.2737771,15z/data=!4m6!3m5!1s0x94dcfb6f45c24819:0xdda8cabfb32e092!8m2!3d-25.5553008!4d-49.2719035!16s%2Fg%2F11fzry88vd?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-            <img src="imagem-mapa.png" alt="Mapa da localização da Retiblocos" style="width: 75%; height: auto; border-radius: 10px;">
+        <a href="https://www.google.com.br/maps/place/Retiblocos+Recuperação+De+Peças+De+Motores/@-25.5588684,-49.2737771,15z" target="_blank">
+            <img src="foto-maps.png" alt="Mapa da localização da Retiblocos" style="width: 75%; height: auto; border-radius: 10px;">
         </a>
     </section>
 
