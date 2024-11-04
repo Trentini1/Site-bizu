@@ -252,7 +252,7 @@
         </a>
     </section>
 
-   <!-- Seção de Avaliações -->
+  <!-- Seção de Avaliações -->
 <section class="content avaliacoes" id="avaliacoes">
     <h2>Avaliações dos Clientes</h2>
     <div class="avaliacoes-slider" id="avaliacoesSlider">
@@ -288,16 +288,17 @@
 
     .avaliacoes-slider {
         display: flex;
-        flex-direction: column;
+        justify-content: center;
         align-items: center;
         gap: 10px;
         position: relative;
         width: 100%;
-        max-width: 400px;
+        max-width: 800px;
+        overflow: hidden;
     }
 
     .avaliacao-item {
-        width: 100%;
+        width: 250px;
         padding: 15px;
         background-color: rgba(255, 255, 255, 0.8);
         border-radius: 10px;
@@ -306,8 +307,6 @@
         opacity: 0.5;
         transform: scale(0.9);
         transition: all 0.4s ease;
-        position: absolute;
-        left: 0;
     }
 
     .avaliacao-item.active {
@@ -318,13 +317,13 @@
 
     .avaliacao-item.previous {
         opacity: 0.5;
-        transform: translateY(-120px) scale(0.9);
+        transform: translateX(-120px) scale(0.9);
         z-index: 0;
     }
 
     .avaliacao-item.next {
         opacity: 0.5;
-        transform: translateY(120px) scale(0.9);
+        transform: translateX(120px) scale(0.9);
         z-index: 0;
     }
 
@@ -397,6 +396,7 @@
         updateSlides();
     });
 </script>
+
 
 
    <!-- Seção de Localização -->
