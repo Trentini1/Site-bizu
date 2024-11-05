@@ -27,29 +27,66 @@
             background-blend-mode: multiply;
         }
 
-        /* Navbar fixa */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            padding: 15px 0;
-            display: flex;
-            justify-content: center;
-            z-index: 10;
-        }
+       <style>
+    /* Navbar fixa e transparente */
+    .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 15px 0;
+        display: flex;
+        justify-content: center;
+        transition: top 0.3s ease, opacity 0.3s ease;
+        z-index: 10;
+    }
 
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 20px;
-            transition: color 0.3s ease;
-        }
+    .navbar a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+        transition: color 0.3s ease;
+    }
 
-        .navbar a:hover {
-            color: var(--laranja);
+    .navbar a:hover {
+        color: var(--laranja);
+    }
+
+    /* Novo estilo para o título */
+    .page-title {
+        text-align: center;
+        font-size: 2.5em;
+        color: var(--laranja);
+        margin-top: 100px; /* Para dar espaço após a navbar */
+        transition: opacity 0.3s ease;
+    }
+</style>
+
+<div class="navbar" id="navbar">
+    <a href="index.html">Página Principal</a>
+    <a href="pagina2.html">Projetos Realizados</a>
+</div>
+
+<!-- Título principal da página -->
+<h1 class="page-title">Projetos Realizados pela Retiblocos</h1>
+
+<script>
+    // JavaScript para mostrar/ocultar a navbar ao rolar
+    let lastScrollTop = 0;
+    const navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", function () {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+            // Rolar para baixo, esconde a navbar
+            navbar.style.top = "-70px";
+        } else {
+            // Rolar para cima, mostra a navbar
+            navbar.style.top = "0";
         }
+        lastScrollTop = scrollTop;
+    });
+</script>
 
         /* Áreas de conteúdo */
         .content, footer {
