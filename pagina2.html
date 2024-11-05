@@ -229,35 +229,141 @@
     </section>
 
     <!-- Seção de Linha do Tempo -->
-    <section class="content">
-        <h2>Nossa Trajetória</h2>
-        <div class="timeline">
-            <div class="timeline-item left">
-                <div class="timeline-item-content">
-                    <h4>2007 - Fundação</h4>
-                    <p>Início das atividades da Retiblocos, focada em retífica de motores diesel pesado.</p>
-                </div>
-            </div>
-            <div class="timeline-item right">
-                <div class="timeline-item-content">
-                    <h4>2012 - Expansão de Serviços</h4>
-                    <p>Incorporação de novos serviços e início de operações em outros setores.</p>
-                </div>
-            </div>
-            <div class="timeline-item left">
-                <div class="timeline-item-content">
-                    <h4>2018 - Novo Centro Técnico</h4>
-                    <p>Abertura de um novo centro com tecnologia de ponta para motores industriais.</p>
-                </div>
-            </div>
-            <div class="timeline-item right">
-                <div class="timeline-item-content">
-                    <h4>2023 - Reconhecimento de Qualidade</h4>
-                    <p>Recebimento de certificações de qualidade e melhoria contínua em processos.</p>
-                </div>
+   <style>
+    /* Estilos principais para a linha do tempo */
+    .timeline-section {
+        text-align: center;
+        margin: 50px auto;
+        width: 80%;
+        max-width: 1000px;
+    }
+
+    .timeline-title {
+        font-size: 2.5em;
+        color: #FF6600;
+        margin-bottom: 40px;
+        font-weight: bold;
+    }
+
+    .timeline-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        padding-left: 50px;
+    }
+
+    .timeline-container::before {
+        content: '';
+        position: absolute;
+        width: 4px;
+        background-color: #FF6600;
+        top: 0;
+        bottom: 0;
+        left: 25px;
+        border-radius: 2px;
+    }
+
+    .timeline-item {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin: 20px 0;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .timeline-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .timeline-item::before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        background-color: #FF6600;
+        border-radius: 50%;
+        position: absolute;
+        left: 15px;
+        margin-top: 0px;
+        z-index: 1;
+    }
+
+    .timeline-item-content {
+        margin-left: 40px;
+        text-align: left;
+    }
+
+    .timeline-item-content h4 {
+        color: #006699;
+        font-size: 1.5em;
+        margin: 0;
+        font-weight: bold;
+    }
+
+    .timeline-item-content p {
+        font-size: 1em;
+        margin-top: 5px;
+        color: #333;
+    }
+
+    /* Animação para destacar os itens da linha do tempo */
+    .timeline-item {
+        opacity: 0;
+        transform: translateX(-50px);
+        animation: fadeInTimeline 0.8s forwards;
+    }
+
+    .timeline-item:nth-child(odd) {
+        animation-delay: 0.2s;
+    }
+
+    .timeline-item:nth-child(even) {
+        animation-delay: 0.4s;
+    }
+
+    @keyframes fadeInTimeline {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+</style>
+
+<div class="timeline-section">
+    <h2 class="timeline-title">Nossa Trajetória</h2>
+    <div class="timeline-container">
+        <div class="timeline-item">
+            <div class="timeline-item-content">
+                <h4>2007 - Fundação</h4>
+                <p>Início das atividades da Retiblocos, focada em retífica de motores diesel pesado.</p>
             </div>
         </div>
-    </section>
+        <div class="timeline-item">
+            <div class="timeline-item-content">
+                <h4>2012 - Expansão de Serviços</h4>
+                <p>Incorporação de novos serviços e início de operações em outros setores.</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-item-content">
+                <h4>2018 - Novo Centro Técnico</h4>
+                <p>Abertura de um novo centro com tecnologia de ponta para motores industriais.</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-item-content">
+                <h4>2023 - Reconhecimento de Qualidade</h4>
+                <p>Recebimento de certificações de qualidade e melhoria contínua em processos.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 
     <!-- Seção de Depoimentos -->
     <section class="content">
