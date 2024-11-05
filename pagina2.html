@@ -307,6 +307,7 @@
         position: relative;
         overflow: hidden;
         border-radius: 10px;
+        margin-bottom: 15px; /* Espaço para a descrição abaixo do vídeo */
     }
 
     .video-wrapper video {
@@ -321,13 +322,10 @@
         color: #FFFFFF;
         padding: 10px;
         border-radius: 8px;
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
         text-align: center;
-        position: absolute;
-        bottom: 15px;
-        left: 50%;
-        transform: translateX(-50%);
+        position: relative;
     }
 
     .video-info h4 {
@@ -369,10 +367,10 @@
                 <source src="jhondeere.mp4" type="video/mp4">
                 Seu navegador não suporta a tag de vídeo.
             </video>
-            <div class="video-info">
-                <h4 id="videoTitle">Motor John Deere</h4>
-                <p id="videoDescription">Descrição: Retífica completa realizada no motor John Deere com alta precisão e durabilidade.</p>
-            </div>
+        </div>
+        <div class="video-info">
+            <h4 id="videoTitle">Motor John Deere</h4>
+            <p id="videoDescription">Descrição: Retífica completa realizada no motor John Deere com alta precisão e durabilidade.</p>
         </div>
         <span class="arrow prev" onclick="prevVideo()">&#10094;</span>
         <span class="arrow next" onclick="nextVideo()">&#10095;</span>
@@ -414,7 +412,10 @@
         currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
         updateVideo();
     }
+
+    document.addEventListener('DOMContentLoaded', updateVideo);
 </script>
+
 
 
     <!-- Rodapé -->
