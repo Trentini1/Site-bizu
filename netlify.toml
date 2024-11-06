@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build"  # Ajuste este comando conforme o seu projeto
+  publish = "public"  # Ou outra pasta onde seu site é gerado
+
+[context.production.environment]
+  VISUAL_EDITOR_ENABLED = "true"
