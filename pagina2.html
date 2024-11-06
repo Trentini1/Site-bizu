@@ -56,7 +56,7 @@
             text-align: center;
             font-size: 2.5em;
             color: var(--laranja);
-            margin-top: 80px; /* Ajustado para dar espaço após a navbar */
+            margin-top: 100px; /* Ajustado para dar espaço após a navbar */
             padding-top: 40px;
         }
 
@@ -105,8 +105,171 @@
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
         }
 
-        /* Outros estilos, como linha do tempo, depoimentos, e vídeos */
-        /* Adicione os estilos restantes para cada seção conforme necessário */
+        /* Estilos principais para a linha do tempo */
+        .timeline-section {
+            text-align: center;
+            margin: 50px auto;
+            width: 80%;
+            max-width: 1000px;
+        }
+
+        .timeline-title {
+            font-size: 2.5em;
+            color: #FF6600;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        .timeline-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #FF6600;
+            top: 0;
+            bottom: 0;
+            left: 25px;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-item-content {
+            margin-left: 40px;
+            text-align: left;
+        }
+
+        .timeline-item-content h4 {
+            color: #006699;
+            font-size: 1.5em;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        /* Seção de Depoimentos */
+        .depoimentos {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .depoimento-item {
+            width: 250px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .depoimento-item:hover {
+            transform: scale(1.05);
+        }
+
+        .depoimento-item p {
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        .depoimento-item h4 {
+            margin-top: 10px;
+            font-size: 1em;
+            font-weight: bold;
+            color: var(--laranja);
+        }
+
+        /* Estilo para vídeos */
+        .videos-section {
+            text-align: center;
+            margin: 40px auto;
+        }
+
+        .videos-title {
+            color: #FF6600;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .video-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .video-info {
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            color: #FFFFFF;
+            padding: 10px;
+            border-radius: 8px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            margin-top: -5px;
+        }
+
+        .video-info h4 {
+            color: #FF6600;
+            margin: 0;
+        }
+
+        /* Setas de navegação */
+        .arrow {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            font-size: 2em;
+            color: #FF6600;
+            transform: translateY(-50%);
+            padding: 5px;
+            user-select: none;
+        }
+
+        .prev {
+            left: -40px;
+        }
+
+        .next {
+            right: -40px;
+        }
     </style>
 </head>
 <body>
@@ -132,7 +295,38 @@
         </div>
     </section>
 
-    <!-- Seção de Depoimentos (exemplo) -->
+    <!-- Seção de Linha do Tempo -->
+    <section class="timeline-section">
+        <h2 class="timeline-title">Nossa Trajetória</h2>
+        <div class="timeline-container">
+            <div class="timeline-item">
+                <div class="timeline-item-content">
+                    <h4>2007 - Fundação</h4>
+                    <p>Início das atividades da Retiblocos, focada em retífica de motores diesel pesado.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-item-content">
+                    <h4>2012 - Expansão de Serviços</h4>
+                    <p>Incorporação de novos serviços e início de operações em outros setores.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-item-content">
+                    <h4>2018 - Novo Centro Técnico</h4>
+                    <p>Abertura de um novo centro com tecnologia de ponta para motores industriais.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-item-content">
+                    <h4>2023 - Reconhecimento de Qualidade</h4>
+                    <p>Recebimento de certificações de qualidade e melhoria contínua em processos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Depoimentos -->
     <section class="content">
         <h2>O Que Nossos Clientes Dizem</h2>
         <div class="depoimentos">
@@ -147,6 +341,25 @@
             <!-- Outros depoimentos -->
         </div>
     </section>
+
+    <!-- Seção de Vídeos -->
+    <div class="videos-section">
+        <h2 class="videos-title">Projetos de Retífica Realizados</h2>
+        <div class="video-container">
+            <div class="video-wrapper" id="videoWrapper">
+                <video controls>
+                    <source src="jhondeere.mp4" type="video/mp4">
+                    Seu navegador não suporta a tag de vídeo.
+                </video>
+            </div>
+            <div class="video-info">
+                <h4 id="videoTitle">Motor John Deere</h4>
+                <p id="videoDescription">Descrição: Retífica completa realizada no motor John Deere com alta precisão e durabilidade.</p>
+            </div>
+            <span class="arrow prev" onclick="prevVideo()">&#10094;</span>
+            <span class="arrow next" onclick="nextVideo()">&#10095;</span>
+        </div>
+    </div>
 
     <!-- Rodapé -->
     <footer class="content">
@@ -164,7 +377,49 @@
     </footer>
 
     <script>
-        // JavaScript para mostrar/ocultar a navbar ao rolar
+        const videos = [
+            {
+                src: 'jhondeere.mp4',
+                title: 'Motor John Deere',
+                description: 'Descrição: Retífica completa realizada no motor John Deere com alta precisão e durabilidade.'
+            },
+            {
+                src: 'maquina-johndeere.mp4',
+                title: 'Escavadeira John Deere',
+                description: 'Descrição: Teste de performance no motor John Deere.'
+            }, 
+            {
+                src: 'cummins.mp4',
+                title: 'Motor Cummins ISB 6CC',
+                description: 'Descrição: Serviço de retífica e reparo no motor Cummins ISB 6CC, garantindo performance e longevidade.'
+            }
+        ];
+
+        let currentVideoIndex = 0;
+
+        function updateVideo() {
+            const videoElement = document.querySelector('.video-wrapper video');
+            const videoTitle = document.getElementById('videoTitle');
+            const videoDescription = document.getElementById('videoDescription');
+
+            videoElement.src = videos[currentVideoIndex].src;
+            videoTitle.textContent = videos[currentVideoIndex].title;
+            videoDescription.textContent = videos[currentVideoIndex].description;
+        }
+
+        function nextVideo() {
+            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+            updateVideo();
+        }
+
+        function prevVideo() {
+            currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
+            updateVideo();
+        }
+
+        document.addEventListener('DOMContentLoaded', updateVideo);
+
+        // Navbar com efeito de ocultação
         let lastScrollTop = 0;
         const navbar = document.getElementById("navbar");
 
