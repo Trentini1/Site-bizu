@@ -186,18 +186,17 @@
     background-color: #000; /* Fundo preto */
     color: #fff; /* Texto branco */
     padding: 20px 0; /* Espaçamento vertical */
-    position: fixed; /* Fixo na parte inferior */
+    position: relative; /* Posição relativa para que o rodapé flua com o conteúdo */
     left: 0; /* Alinhado à esquerda */
     right: 0; /* Alinhado à direita */
     bottom: 0; /* Na parte inferior */
-    z-index: 100; /* Acima de outros elementos */
 }
 
 .footer-content {
     display: flex; /* Flexbox para layout */
     justify-content: space-between; /* Espaçamento entre os itens */
     align-items: center; /* Alinhamento vertical */
-    max-width: 2000px; /* Limite de largura (ajuste conforme necessário) */
+    max-width: 1200px; /* Limite de largura (ajuste conforme necessário) */
     margin: auto; /* Centraliza horizontalmente */
     padding: 0 20px; /* Adiciona espaçamento nas laterais */
 }
@@ -309,28 +308,19 @@
 <!-- Rodapé -->
 <footer class="footer">
     <div class="footer-content">
-        <div class="footer-logo">
-            <h2>Retiblocos</h2>
-            <p>Especialistas em Retífica Diesel Pesado</p>
-        </div>
-        <ul class="footer-links">
-            <li><a href="#sobre">Sobre Nós</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#marcas">Marcas</a></li>
-            <li><a href="#contato">Contato</a></li>
-        </ul>
         <div class="footer-contact">
             <h2>Contato</h2>
-            <ul>
-                <li>Fixo: <a href="https://wa.me/554130859910" target="_blank">(41) 3085-9910</a></li>
-                <li>Celular: <a href="https://wa.me/5541999741204" target="_blank">(41) 99741-204</a></li>
+            <ul class="footer-links">
+                <li>Fixo: <a href="https://wa.me/554130859910" target="_blank">(41) 3085-9910</a> (Erick, Gerente Adm)</li>
+                <li>Celular: <a href="https://wa.me/554130859910" target="_blank">(41) 99741-204</a> (Fernando, Proprietário)</li>
                 <li>Email: <a href="mailto:escritorio.retiblocos@hotmail.com">escritorio.retiblocos@hotmail.com</a></li>
                 <li>CNPJ: 53.659.638/0001-03</li>
             </ul>
         </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2024 Retiblocos. Todos os direitos reservados.</p>
+        <div class="footer-bottom">
+            &copy; 2024 Retiblocos. All rights reserved. <br>
+            Website developed by Trentini
+        </div>
     </div>
 </footer>
 
