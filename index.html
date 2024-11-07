@@ -30,29 +30,38 @@
             background-blend-mode: multiply;
         }
 
-    /* Navbar fixa com espaçamento */
+  /* Navbar */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    padding: 10px 0; /* Reduzido para ajustar a altura */
-    display: flex;
-    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro */
+    padding: 10px 0;
     z-index: 10;
+    transition: background-color 0.3s; /* Efeito de transição */
 }
 
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 20px;
-            transition: color 0.3s ease;
-        }
+.navbar-content {
+    display: flex;
+    justify-content: center; /* Centraliza os itens */
+}
 
-        .navbar a:hover {
-            color: var(--laranja);
-        }
+.navbar a {
+    color: #FF6600; /* Cor do texto */
+    text-decoration: none; /* Remove sublinhado */
+    padding: 15px 20px;
+    margin: 0 10px; /* Espaçamento entre os links */
+    font-family: 'Arial', sans-serif; /* Fonte personalizada */
+    font-size: 1.1em; /* Tamanho da fonte */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s, color 0.3s; /* Efeitos de transição */
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 102, 0, 0.3); /* Cor de fundo ao passar o mouse */
+    color: #fff; /* Cor do texto ao passar o mouse */
+}
+
 
         /* Estilos de áreas de conteúdo */
         .content, .cta, footer {
@@ -320,11 +329,13 @@
 </head>
 <body>
 
-    <!-- Navbar -->
-    <div class="navbar">
+   <!-- Navbar -->
+<nav class="navbar" id="navbar">
+    <div class="navbar-content">
         <a href="index.html">Página Principal</a>
         <a href="pagina2.html">Serviços Feitos</a>
     </div>
+</nav>
 
     <!-- Cabeçalho e logo -->
     <header class="content header-compact" id="sobre">
