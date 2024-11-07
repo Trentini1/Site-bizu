@@ -271,6 +271,50 @@
                 align-items: center; /* Centraliza o conteúdo do rodapé */
             }
         }
+<div id="cookie-banner" style="background-color: rgba(0, 0, 0, 0.8); color: white; padding: 20px; position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000; display: none; border-top: 2px solid #FF6600; box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);">
+    <div style="max-width: 800px; margin: auto; text-align: center;">
+        <p style="font-size: 1.2em; margin: 0;">Este site usa cookies para melhorar a sua experiência. Ao continuar navegando, você concorda com o uso de cookies.</p>
+        <div style="margin-top: 15px;">
+            <button id="accept-cookies" style="background-color: #FF6600; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Aceitar</button>
+            <button id="settings-cookies" style="background-color: transparent; color: #FF6600; border: 2px solid #FF6600; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-left: 10px; transition: background-color 0.3s;">Configurações</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Mostrar o banner se ainda não foi aceito
+    if (!localStorage.getItem('cookiesAccepted')) {
+        document.getElementById('cookie-banner').style.display = 'block';
+    }
+
+    // Aceitar cookies
+    document.getElementById('accept-cookies').onclick = function() {
+        localStorage.setItem('cookiesAccepted', 'true');
+        document.getElementById('cookie-banner').style.display = 'none';
+    };
+
+    // Configurações de cookies
+    document.getElementById('settings-cookies').onclick = function() {
+        // Aqui você pode abrir um modal ou redirecionar para uma página de configurações
+        alert('Configurações de cookies não implementadas nesta demonstração.');
+    };
+</script>
+
+<style>
+    @media (max-width: 600px) {
+        #cookie-banner {
+            padding: 15px;
+        }
+
+        #cookie-banner p {
+            font-size: 1em;
+        }
+
+        #accept-cookies, #settings-cookies {
+            padding: 8px 15px;
+        }
+    }
+</style>
 
     </style>
 </head>
