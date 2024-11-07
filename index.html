@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retiblocos - Retífica Diesel Pesado</title>
     <link rel="icon" href="mini-logo.png" type="image/png">
-    <!-- Adicione as meta tags aqui -->
     <meta name="description" content="Retífica diesel rápida e barata em Curitiba. Especialistas em motores Caterpillar, Cummins, Volvo e Mercedes.">
     <meta name="keywords" content="retífica diesel, retífica de motores, retífica em Curitiba, serviços de retífica, retífica barata, retífica rápida, retífica de motores Caterpillar, retífica de motores Cummins, retífica de motores Volvo, retífica de motores Mercedes, remanufatura de motores, venda de peças de motor, diagnóstico de motores diesel, manutenção de motores diesel, injeção diesel, serviços de retífica de motores pesados, assistência técnica de motores, retífica de motores agrícolas, retífica de motores pesados, motores Caterpillar em Curitiba, motores Cummins em Curitiba, motores Volvo em Curitiba, motores Mercedes em Curitiba, melhor retífica em Curitiba, preço de retífica em Curitiba, qualidade de retífica em Curitiba, serviços automotivos em Curitiba, motores para caminhões em Curitiba, serviços industriais em Curitiba, retífica de motores a diesel, reparação de motores diesel, eficiência em retífica, soluções de motores diesel, confiabilidade em retífica de motores, retífica de motores de geradores">
     <meta name="robots" content="index, follow">
-   <style>
-
+    <style>
         /* Paleta de cores */
         :root {
             --azul-escuro: #006699;
@@ -43,6 +41,7 @@
             display: flex;
             justify-content: center;
             z-index: 10;
+            flex-wrap: wrap;
         }
 
         .navbar a {
@@ -56,17 +55,17 @@
             color: var(--laranja);
         }
 
-     /* Estilos de áreas de conteúdo */
-.content, .cta, footer {
-    background-color: rgba(0, 0, 0, 0.5); /* Altere para um fundo preto transparente */
-    backdrop-filter: blur(5px); /* Manter o desfoque */
-    border-radius: 10px;
-    padding: 20px 30px;
-    margin: 80px auto 20px;
-    max-width: 80%;
-    color: #FFFFFF; /* Altere a cor do texto para branco, se necessário */
-    transition: transform 0.3s ease;
-}
+        /* Estilos de áreas de conteúdo */
+        .content, .cta, footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+            padding: 20px 30px;
+            margin: 80px auto 20px;
+            max-width: 80%;
+            color: #FFFFFF;
+            transition: transform 0.3s ease;
+        }
 
         .content:hover, .cta:hover {
             transform: scale(1.02);
@@ -98,39 +97,38 @@
             color: var(--laranja);
         }
 
-/* Seção de Marcas */
-.marcas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-}
+        /* Seção de Marcas */
+        .marcas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
 
-/* Estilo padrão para todas as imagens de marcas */
-.marcas img {
-    width: 100px;
-    height: auto;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-    border-radius: 5px;
-}
+        .marcas img {
+            width: 100px;
+            height: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+            border-radius: 5px;
+        }
 
+        .marcas img.img-grande {
+            width: 170px;
+            height: auto;
+        }
 
-.marcas img.img-grande {
-    width: 170px; /* Ajuste o tamanho conforme necessário */
-    height: auto;
-}
+        .marcas img.media {
+            width: 360px;
+            height: auto;
+        }
 
-.marcas img.media {
-    width: 360px; /* Ajuste o tamanho conforme necessário */
-    height: auto;
-}
+        .marcas img:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
 
-.marcas img:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-}
         /* Seção de Serviços */
         .services {
             display: grid;
@@ -182,63 +180,98 @@
         .whatsapp-icon:hover {
             transform: scale(1.1);
         }
+
         /* Estilo para o desfoque específico da seção do mapa */
-.content-mapa {
-    backdrop-filter: blur(3px); /* Ajuste o valor do desfoque conforme desejado */
-}
-/* Estilo do rodapé */
-.footer {
-    background-color: #000; /* Fundo preto */
-    color: #fff; /* Texto branco */
-    padding: 20px 0; /* Espaçamento vertical */
-    position: relative; /* Posição relativa para que o rodapé flua com o conteúdo */
-    left: 0; /* Alinhado à esquerda */
-    right: 0; /* Alinhado à direita */
-    bottom: 0; /* Na parte inferior */
-}
+        .content-mapa {
+            backdrop-filter: blur(3px);
+        }
 
-.footer-content {
-    display: flex; /* Flexbox para layout */
-    justify-content: space-between; /* Espaçamento entre os itens */
-    align-items: center; /* Alinhamento vertical */
-    max-width: 1200px; /* Limite de largura (ajuste conforme necessário) */
-    margin: auto; /* Centraliza horizontalmente */
-    padding: 0 20px; /* Adiciona espaçamento nas laterais */
-}
+        /* Estilo do rodapé */
+        .footer {
+            background-color: #000;
+            color: #fff;
+            padding: 20px 0;
+            position: relative;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
 
-.footer-logo {
-    text-align: left; /* Alinhamento à esquerda */
-}
+        .footer-content {
+            display: flex;
+            flex-direction: column; /* Mudança para coluna para melhor responsividade */
+            align-items: center; /* Centraliza o conteúdo do rodapé */
+            padding: 0 20px;
+        }
 
-.footer-links {
-    list-style: none; /* Remove marcadores */
-    padding: 0; /* Remove padding */
-}
+        .footer-contact {
+            text-align: center; /* Alinhamento central no rodapé */
+        }
 
-.footer-links li {
-    margin: 5px 0; /* Espaçamento entre links */
-}
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            text-align: center; /* Centraliza os links do rodapé */
+        }
 
-.footer-links a {
-    color: #FF6600; /* Cor do link */
-    text-decoration: none; /* Remove sublinhado */
-    transition: color 0.3s; /* Transição suave */
-}
+        .footer-links li {
+            margin: 5px 0;
+        }
 
-.footer-links a:hover {
-    text-decoration: underline; /* Sublinhado ao passar o mouse */
-}
+        .footer-links a {
+            color: #FF6600;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
 
-.footer-contact {
-    text-align: left; /* Alinhamento à esquerda */
-}
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
 
-.footer-bottom {
-    text-align: center; /* Centraliza texto */
-    font-size: 0.9em; /* Tamanho da fonte */
-    color: #ccc; /* Cor do texto */
-    margin-top: 10px; /* Espaçamento superior */
-}
+        .footer-bottom {
+            text-align: center;
+            font-size: 0.9em;
+            color: #ccc;
+            margin-top: 10px;
+        }
+
+        /* Media Queries para responsividade */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column; /* Muda para coluna em telas menores */
+                padding: 10px 0; /* Ajuste o padding */
+            }
+
+            .header-compact {
+                padding: 10px; /* Reduz o padding */
+            }
+
+            .content {
+                padding: 15px; /* Reduz o padding para mais espaço */
+                max-width: 95%; /* Aumenta a largura em dispositivos pequenos */
+            }
+
+            h2, h3 {
+                font-size: 1.5em; /* Reduz os tamanhos das fontes dos títulos */
+            }
+
+            .marcas img {
+                width: 80px; /* Reduz a largura das imagens */
+            }
+
+            .service-item {
+                padding: 15px; /* Ajuste o padding dos itens de serviço */
+            }
+
+            .video-container {
+                width: 90%; /* Ajusta a largura do container de vídeo */
+            }
+
+            .footer-content {
+                flex-direction: column; /* Coloca os itens do rodapé em coluna */
+                align-items: center; /* Centraliza o conteúdo do rodapé */
+            }
+        }
 
     </style>
 </head>
@@ -257,26 +290,26 @@
     </header>
 
     <!-- Seção de Sobre Nós -->
-<section class="content">
-    <h2>Sobre Nós</h2>
-    <p>A Retiblocos atua desde 2007 na retífica de motores diesel pesado...</p>
-</section>
+    <section class="content">
+        <h2>Sobre Nós</h2>
+        <p>A Retiblocos atua desde 2007 na retífica de motores diesel pesado...</p>
+    </section>
 
-<!-- Seção de Marcas -->
-<<section class="content marcas" id="marcas">
-    <h2>Marcas</h2>
-    <div>
-        <img src="logo-caterpillar.png" alt="Caterpillar" class="img-grande">
-        <img src="logo-cummins.png" alt="Cummins">
-        <img src="logo-volvo.png" alt="Volvo" class="img-grande">
-        <img src="logo-mercedes.png" alt="Mercedes" class="img-grande">
-        <img src="scania.png" alt="Scania" class="media"> 
-    </div>
-</section>
+    <!-- Seção de Marcas -->
+    <section class="content marcas" id="marcas">
+        <h2>Marcas</h2>
+        <div>
+            <img src="logo-caterpillar.png" alt="Caterpillar" class="img-grande">
+            <img src="logo-cummins.png" alt="Cummins">
+            <img src="logo-volvo.png" alt="Volvo" class="img-grande">
+            <img src="logo-mercedes.png" alt="Mercedes" class="img-grande">
+            <img src="scania.png" alt="Scania" class="media"> 
+        </div>
+    </section>
 
     <!-- Seção de Serviços -->
-<section class="content services" id="servicos">
-    <h2>Serviços</h2>
+    <section class="content services" id="servicos">
+        <h2>Serviços</h2>
         <a href="https://wa.me/554130859910" target="_blank" class="service-item">
             <h3>Retífica de Motores</h3>
             <p>Realizamos retífica completa de motores diesel com equipamentos de alta tecnologia.</p>
@@ -295,39 +328,38 @@
         </a>
     </section>
 
-<!-- Seção de Localização com mapa ao vivo -->
-<section class="content content-mapa" id="contato">
-    <h2>Localização</h2>
-   <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.491772847277!2d-49.27447842453193!3d-25.55530077748214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dcfb6f45c24819%3A0xdda8cabfb32e092!2sRetiblocos%20Recupera%C3%A7%C3%A3o%20De%20Pe%C3%A7as%20De%20Motores!5e0!3m2!1spt-BR!2sbr!4v1730910252407!5m2!1spt-BR!2sbr" 
-    width="1250" 
-    height="450" 
-    style="border:0;" 
-    allowfullscreen="" 
-    loading="lazy" 
-    referrerpolicy="no-referrer-when-downgrade">
-</iframe>
+    <!-- Seção de Localização com mapa ao vivo -->
+    <section class="content content-mapa" id="contato">
+        <h2>Localização</h2>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.491772847277!2d-49.27447842453193!3d-25.55530077748214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dcfb6f45c24819%3A0xdda8cabfb32e092!2sRetiblocos%20Recupera%C3%A7%C3%A3o%20De%20Pe%C3%A7as%20De%20Motores!5e0!3m2!1spt-BR!2sbr!4v1730910252407!5m2!1spt-BR!2sbr" 
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </section>
 
-</section>
-
-<!-- Rodapé -->
-<footer class="footer">
-    <div class="footer-content">
-        <div class="footer-contact">
-            <h2>Contato</h2>
-            <ul class="footer-links">
-                <li>Fixo: <a href="https://wa.me/554130859910" target="_blank">(41) 3085-9910</a> (Erick, Gerente Adm)</li>
-                <li>Celular: <a href="https://wa.me/554130859910" target="_blank">(41) 99741-204</a> (Fernando, Proprietário)</li>
-                <li>Email: <a href="mailto:escritorio.retiblocos@hotmail.com">escritorio.retiblocos@hotmail.com</a></li>
-                <li>CNPJ: 53.659.638/0001-03</li>
-            </ul>
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-contact">
+                <h2>Contato</h2>
+                <ul class="footer-links">
+                    <li>Fixo: <a href="https://wa.me/554130859910" target="_blank">(41) 3085-9910</a> (Erick, Gerente Adm)</li>
+                    <li>Celular: <a href="https://wa.me/554130859910" target="_blank">(41) 99741-204</a> (Fernando, Proprietário)</li>
+                    <li>Email: <a href="mailto:escritorio.retiblocos@hotmail.com">escritorio.retiblocos@hotmail.com</a></li>
+                    <li>CNPJ: 53.659.638/0001-03</li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Retiblocos. All rights reserved. <br>
+                Website developed by Trentini
+            </div>
         </div>
-        <div class="footer-bottom">
-            &copy; 2024 Retiblocos. All rights reserved. <br>
-            Website developed by Trentini
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <!-- Ícone flutuante do WhatsApp -->
     <a href="https://wa.me/554130859910" target="_blank" class="whatsapp-icon"></a>
