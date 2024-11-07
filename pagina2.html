@@ -59,7 +59,6 @@
     color: #fff; /* Cor do texto ao passar o mouse */
 }
 
-
         /* Título Principal */
         .page-title {
             text-align: center;
@@ -273,7 +272,7 @@
             font-size: 2em;
             color: #FF6600;
             transform: translateY(-50%);
-            padding: 5px;
+            padding: 15px;
             user-select: none;
         }
 
@@ -533,19 +532,7 @@
 
         document.addEventListener('DOMContentLoaded', updateVideo);
 
-        // Navbar com efeito de ocultação
-        let lastScrollTop = 0;
-        const navbar = document.getElementById("navbar");
 
-        window.addEventListener("scroll", function () {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop > lastScrollTop) {
-                navbar.style.top = "-70px"; // Esconde a navbar
-            } else {
-                navbar.style.top = "0"; // Mostra a navbar
-            }
-            lastScrollTop = scrollTop;
-        });
     </script>
 </body>
 </html>
