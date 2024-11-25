@@ -29,6 +29,20 @@
             color: #000;
             background-blend-mode: multiply;
         }
+        @keyframes reveal {
+        0% {
+            opacity: 0;
+            transform: scale(0.5) rotate(-360deg);
+        }
+        50% {
+            opacity: 0.5;
+            transform: scale(1.2) rotate(180deg);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+    }
 
   /* Navbar */
 .navbar {
@@ -419,20 +433,45 @@
 
     < <!-- Rodapé -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-contact">
-                <h2>Contato</h2>
-                <ul class="footer-links">
-                    <li>Fixo: <a href="https://wa.me/554130859910" target="_blank">(41) 3085-9910</a> (Erick, Gerente Adm)</li>
-                    <li>Celular: <a href="https://wa.me/554130859910" target="_blank">(41) 99741-204</a> (Fernando, Proprietário)</li>
-                    <li>Email: <a href="mailto:escritorio.retiblocos@hotmail.com">escritorio.retiblocos@hotmail.com</a></li>
-                    <li>CNPJ: 53.659.638/0001-03</li>
-                </ul>
-            </div>
-            <div class="footer-bottom">
-                &copy; 2024 Retiblocos. All rights reserved. <br>
-                Website developed by Trentini
-            </div>
+    <div class="footer-content">
+        <div class="footer-contact">
+            <h2>Contato</h2>
+            <ul class="footer-links">
+                <li>Fixo: <a href="https://wa.me/554130859910" target="_blank">(41) 3085-9910</a> (Erick, Gerente Adm)</li>
+                <li>Celular: <a href="https://wa.me/554130859910" target="_blank">(41) 99741-204</a> (Fernando, Proprietário)</li>
+                <li>Email: <a href="mailto:escritorio.retiblocos@hotmail.com">escritorio.retiblocos@hotmail.com</a></li>
+                <li>CNPJ: 53.659.638/0001-03</li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Retiblocos. All rights reserved. <br>
+            Website developed by Trentini
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+    <button id="easter-egg-btn" style="
+        background-color: #FF6600; 
+        color: white; 
+        border: none; 
+        padding: 10px 20px; 
+        border-radius: 5px; 
+        cursor: pointer; 
+        font-size: 1.1em; 
+        transition: transform 0.3s ease, background-color 0.3s ease;">
+        Surpresa!
+    </button>
+</div>
+        <img src="DECI.png" id="easter-egg-img" alt="Funcionário Deci" style="
+    display: none; 
+    width: 150px; 
+    height: auto; 
+    margin: 20px auto 0; 
+    border-radius: 50%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+    animation: none;">
+
+    </div>
+</footer>
+            
            <!-- Ícone flutuante do WhatsApp -->
 <a href="https://wa.me/554130859910" target="_blank" class="whatsapp-icon"></a>
 
