@@ -282,6 +282,22 @@
             .video-container {
                 width: 100%; /* Aumenta a largura para 100% */
             }
+            .fixed-deci {
+    position: fixed; /* Fixa a posição da imagem */
+    bottom: 20px; /* Ajusta a posição inferior (margem de 20px) */
+    left: 20px; /* Ajusta a posição à esquerda (margem de 20px) */
+    width: 150px; /* Largura fixa (ajuste conforme necessário) */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 50%; /* Deixa a imagem circular (opcional) */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra para destaque */
+    z-index: 100; /* Garante que fique acima de outros elementos */
+    transition: transform 0.3s ease; /* Adiciona um efeito suave */
+}
+
+.fixed-deci:hover {
+    transform: scale(1.1); /* Aumenta levemente ao passar o mouse */
+}
+
         }
     </style>
     
@@ -417,6 +433,9 @@
                 &copy; 2024 Retiblocos. All rights reserved. <br>
                 Website developed by Trentini
             </div>
+            <!-- Imagem fixa do funcionário -->
+<img src="DECI.png" alt="Funcionário Deci" class="fixed-deci">
+
         </div>
     </footer>
 
