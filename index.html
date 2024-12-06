@@ -11,11 +11,11 @@
     <style>
         /* Paleta de cores */
         :root {
-            --azul-claro: #00bcd4;
-            --laranja-escuro: #ff5722;
-            --cinza-claro: #e0e0e0;
-            --preto-escuro: #212121;
-            --branco: #fff;
+            --laranja-suave: #ff7043; /* Laranja suave */
+            --cinza-claro: #f5f5f5; /* Fundo claro */
+            --cinza-escuro: #616161; /* Texto em cinza escuro */
+            --branco: #ffffff;
+            --preto: #212121;
         }
 
         /* Reset básico */
@@ -23,24 +23,24 @@
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
-            color: var(--preto-escuro);
+            color: var(--preto);
         }
 
         body {
             background-color: var(--cinza-claro);
             line-height: 1.6;
             font-size: 16px;
-            transition: all 0.3s ease;
         }
 
         /* Navegação */
         nav {
-            background-color: var(--azul-claro);
+            background-color: var(--laranja-suave);
             padding: 15px 20px;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 10;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         nav a {
@@ -52,7 +52,7 @@
         }
 
         nav a:hover {
-            color: var(--laranja-escuro);
+            color: var(--cinza-escuro);
         }
 
         /* Cabeçalho */
@@ -87,7 +87,20 @@
             margin-bottom: 20px;
         }
 
-        /* Seção serviços */
+        /* Seção de marcas */
+        .marcas {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 20px;
+            background-color: var(--cinza-claro);
+        }
+
+        .marca img {
+            max-height: 100px; /* Tamanho padronizado para as imagens */
+            object-fit: contain;
+        }
+
+        /* Seção de serviços */
         .servicos {
             background-color: var(--cinza-claro);
             padding: 60px 20px;
@@ -98,7 +111,7 @@
 
         .servicos h3 {
             font-size: 1.8rem;
-            color: var(--laranja-escuro);
+            color: var(--laranja-suave);
             margin-bottom: 10px;
         }
 
@@ -116,19 +129,19 @@
         }
 
         .servicos .card p {
-            color: var(--preto-escuro);
+            color: var(--preto);
         }
 
         /* Rodapé */
         footer {
-            background-color: var(--preto-escuro);
+            background-color: var(--preto);
             color: var(--branco);
             padding: 40px 20px;
             text-align: center;
         }
 
         footer a {
-            color: var(--azul-claro);
+            color: var(--laranja-suave);
             text-decoration: none;
         }
 
@@ -190,6 +203,22 @@
     <section class="sobre" id="sobre">
         <h2>Sobre Nós</h2>
         <p>Somos especializados na retífica de motores diesel pesados, com mais de 15 anos de experiência no mercado. Nossa missão é garantir a qualidade e a performance dos motores Caterpillar, Cummins, Volvo e Mercedes.</p>
+    </section>
+
+    <!-- Seção de Marcas -->
+    <section class="marcas">
+        <div class="marca">
+            <img src="caterpillar-logo.png" alt="Caterpillar">
+        </div>
+        <div class="marca">
+            <img src="cummins-logo.png" alt="Cummins">
+        </div>
+        <div class="marca">
+            <img src="volvo-logo.png" alt="Volvo">
+        </div>
+        <div class="marca">
+            <img src="mercedes-logo.png" alt="Mercedes">
+        </div>
     </section>
 
     <!-- Seção de serviços -->
