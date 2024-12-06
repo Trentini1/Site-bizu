@@ -16,294 +16,467 @@
             --amarelo-claro: #FFCC33;
             --vermelho: #CC3333;
             --branco: #FFFFFF;
-            --cinza-claro: #f2f2f2;
-            --preto-transparente: rgba(0, 0, 0, 0.7);
-            --cinza-escuro: #333;
-            --cinza-media: #666;
+            --cinza: #f2f2f2;
         }
 
-        /* Estilo global */
+        /* Fundo do site */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: url('fundo-site.jpg') no-repeat center center fixed;
+            background: url('fundo-site.png') no-repeat center center fixed;
             background-size: cover;
-            background-blend-mode: overlay;
-            color: var(--branco);
-            line-height: 1.6;
+            color: #000;
+            background-blend-mode: multiply;
+        }
+        @keyframes reveal {
+        0% {
+            opacity: 0;
+            transform: scale(0.5) rotate(-360deg);
+        }
+        50% {
+            opacity: 0.5;
+            transform: scale(1.2) rotate(180deg);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+    }
+
+  /* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro */
+    padding: 10px 0;
+    z-index: 10;
+    transition: background-color 0.3s; /* Efeito de transição */
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: center; /* Centraliza os itens */
+}
+
+.navbar a {
+    color: #FF6600; /* Cor do texto */
+    text-decoration: none; /* Remove sublinhado */
+    padding: 15px 20px;
+    margin: 0 10px; /* Espaçamento entre os links */
+    font-family: 'Arial', sans-serif; /* Fonte personalizada */
+    font-size: 1.1em; /* Tamanho da fonte */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s, color 0.3s; /* Efeitos de transição */
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 102, 0, 0.3); /* Cor de fundo ao passar o mouse */
+    color: #fff; /* Cor do texto ao passar o mouse */
+}
+
+
+        /* Estilos de áreas de conteúdo */
+        .content, .cta, footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+            padding: 20px 30px;
+            margin: 80px auto 20px;
+            max-width: 80%;
+            color: #FFFFFF;
+            transition: transform 0.3s ease;
         }
 
-        /* Navbar */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: var(--preto-transparente);
-            padding: 20px;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        .content:hover, .cta:hover {
+            transform: scale(1.02);
         }
 
-        .navbar-content {
-            display: flex;
-            justify-content: center;
-        }
-
-        .navbar a {
-            color: var(--laranja);
-            text-decoration: none;
-            padding: 15px 25px;
-            margin: 0 20px;
-            font-size: 1.1em;
-            transition: all 0.3s;
-            border-radius: 5px;
-        }
-
-        .navbar a:hover {
-            background-color: rgba(255, 102, 0, 0.3);
-            color: var(--branco);
-        }
-
-        /* Seção do cabeçalho */
-        .header-compact {
-            text-align: center;
-            padding: 50px 20px;
-            background: rgba(255, 255, 255, 0.4);
-            border-radius: 15px;
-            margin-top: 100px;
-            animation: slideIn 1.2s ease-out;
-        }
+        /* Cabeçalho e logo */
+.header-compact {
+    margin-top: 50px; /* Ajuste a margem para 50px */
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 10px 20px;
+    max-width: 100%;
+    text-align: center;
+}
 
         .header-compact img {
-            max-width: 100%;
-            width: 450px;
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: block;
             margin: auto;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            object-fit: contain;
         }
 
         .header-compact p {
-            font-size: 1.2em;
+            font-size: 0.9em;
+        }
+
+        h2, h3 {
             color: var(--laranja);
-            margin-top: 20px;
         }
 
-        /* Seção Sobre Nós */
-        .content {
-            background-color: var(--preto-transparente);
-            backdrop-filter: blur(5px);
-            border-radius: 15px;
-            padding: 40px;
-            margin: 50px auto;
-            max-width: 80%;
-            text-align: center;
-            animation: fadeIn 2s ease-out;
-        }
-
-        h2 {
-            font-size: 2em;
-            color: var(--laranja);
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 1.2em;
-            color: var(--cinza-claro);
-        }
-
-        /* Animação de FadeIn */
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Seção Marcas */
+        /* Seção de Marcas */
         .marcas {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
+            gap: 15px;
+            margin-top: 20px;
         }
 
         .marcas img {
-            width: 130px;
-            height: 130px;
-            object-fit: contain;
-            transition: transform 0.3s ease;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            width: 100px;
+            height: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+            border-radius: 5px;
+        }
+
+        .marcas img.img-grande {
+            width: 170px;
+            height: auto;
+        }
+
+        .marcas img.media {
+            width: 360px;
+            height: auto;
         }
 
         .marcas img:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         /* Seção de Serviços */
         .services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin: 40px auto;
-            max-width: 80%;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
 
         .service-item {
-            background: var(--cinza-claro);
-            padding: 30px;
+            background-color: var(--cinza);
+            padding: 20px;
             border-radius: 10px;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
             cursor: pointer;
-            overflow: hidden;
+            position: relative;
+        }
+
+        .service-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .service-item h3 {
             color: var(--laranja);
             margin-bottom: 10px;
-            font-size: 1.5em;
         }
 
         .service-item p {
-            color: var(--cinza-escuro);
-            font-size: 1.1em;
-        }
-
-        .service-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Footer */
-        footer {
-            background-color: #111;
-            color: #fff;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        footer .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: auto;
-            flex-wrap: wrap;
-        }
-
-        footer .footer-content .footer-contact {
-            flex: 1;
-        }
-
-        footer .footer-content .footer-logo img {
-            width: 150px;
-        }
-
-        footer .footer-content .footer-links a {
-            color: var(--laranja);
-            text-decoration: none;
-        }
-
-        footer .footer-content .footer-links a:hover {
-            text-decoration: underline;
-        }
-
-        footer .footer-bottom {
-            margin-top: 20px;
+            color: #333;
             font-size: 0.9em;
-            color: #ccc;
         }
 
-        /* WhatsApp */
+        /* Ícone do WhatsApp */
         .whatsapp-icon {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            width: 60px;
-            height: 60px;
-            background-image: url('whatsapp-icon.png');
+            width: 50px;
+            height: 50px;
+            background-image: url('whatsapp-logo.png');
             background-size: cover;
             cursor: pointer;
             transition: transform 0.3s ease;
+            z-index: 10;
         }
 
         .whatsapp-icon:hover {
             transform: scale(1.1);
         }
 
+        /* Estilo para o desfoque específico da seção do mapa */
+        .content-mapa {
+            backdrop-filter: blur(3px);
+        }
+
+          /* Estilo do rodapé */
+        .footer {
+            background-color: #000; /* Fundo preto */
+            color: #fff; /* Texto branco */
+            padding: 20px 0; /* Espaçamento vertical */
+            position: relative; /* Posição relativa para que o rodapé flua com o conteúdo */
+            left: 0; /* Alinhado à esquerda */
+            right: 0; /* Alinhado à direita */
+            bottom: 0; /* Na parte inferior */
+        }
+
+        .footer-content {
+            display: flex; /* Flexbox para layout */
+            justify-content: space-between; /* Espaçamento entre os itens */
+            align-items: center; /* Alinhamento vertical */
+            max-width: 1200px; /* Limite de largura (ajuste conforme necessário) */
+            margin: auto; /* Centraliza horizontalmente */
+            padding: 0 20px; /* Adiciona espaçamento nas laterais */
+        }
+
+        .footer-logo {
+            text-align: left; /* Alinhamento à esquerda */
+        }
+
+        .footer-links {
+            list-style: none; /* Remove marcadores */
+            padding: 0; /* Remove padding */
+        }
+
+        .footer-links li {
+            margin: 5px 0; /* Espaçamento entre links */
+        }
+
+        .footer-links a {
+            color: #FF6600; /* Cor do link */
+            text-decoration: none; /* Remove sublinhado */
+            transition: color 0.3s; /* Transição suave */
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline; /* Sublinhado ao passar o mouse */
+        }
+
+        .footer-contact {
+            text-align: left; /* Alinhamento à esquerda */
+        }
+
+        .footer-bottom {
+            text-align: center; /* Centraliza texto */
+            font-size: 0.9em; /* Tamanho da fonte */
+            color: #ccc; /* Cor do texto */
+            margin-top: 10px; /* Espaçamento superior */
+        }
+
+        /* Media Queries para Responsividade */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column; /* Muda a direção para coluna em telas pequenas */
+                padding: 10px 0; /* Menos padding */
+            }
+
+            .page-title {
+                font-size: 2em; /* Tamanho da fonte do título reduzido */
+            }
+
+            .content {
+                padding: 15px; /* Menos padding em telas menores */
+                margin: 10px auto; /* Ajuste nas margens */
+            }
+
+            .gallery img {
+                width: 100%; /* Faz com que a imagem ocupe toda a largura da coluna */
+                height: auto; /* Mantém a proporção da imagem */
+            }
+
+            .timeline-section {
+                width: 100%; /* Faz a seção ocupar toda a largura */
+                margin: 10px auto; /* Centraliza */
+            }
+
+            .timeline-item {
+                flex-direction: column; /* Altera para coluna em telas pequenas */
+                padding: 10px; /* Reduz o padding */
+            }
+
+            .video-container {
+                width: 100%; /* Aumenta a largura para 100% */
+            }
+          .fixed-deci {
+    position: fixed; /* Fixa a posição da imagem */
+    bottom: 20px; /* Ajusta a posição inferior (margem de 20px) */
+    left: 20px; /* Ajusta a posição à esquerda (margem de 20px) */
+    width: 150px; /* Largura fixa (ajuste conforme necessário) */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 50%; /* Deixa a imagem circular (opcional) */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra para destaque */
+    z-index: 100; /* Garante que fique acima de outros elementos */
+    transition: transform 0.3s ease; /* Adiciona um efeito suave */
+}
+
+.fixed-deci:hover {
+    transform: scale(1.1); /* Aumenta levemente ao passar o mouse */
+}
+
+        }
+    </style>
+    
+<div id="cookie-banner" style="background-color: rgba(0, 0, 0, 0.8); color: white; padding: 20px; position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000; display: none; border-top: 2px solid #FF6600; box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);">
+    <div style="max-width: 800px; margin: auto; text-align: center;">
+        <p style="font-size: 1.2em; margin: 0;">Este site usa cookies para melhorar a sua experiência. Ao continuar navegando, você concorda com o uso de cookies.</p>
+        <div style="margin-top: 15px;">
+            <button id="accept-cookies" style="background-color: #FF6600; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Aceitar</button>
+            <button id="settings-cookies" style="background-color: transparent; color: #FF6600; border: 2px solid #FF6600; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-left: 10px; transition: background-color 0.3s;">Configurações</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Mostrar o banner se ainda não foi aceito
+    if (!localStorage.getItem('cookiesAccepted')) {
+        document.getElementById('cookie-banner').style.display = 'block';
+    }
+
+    // Aceitar cookies
+    document.getElementById('accept-cookies').onclick = function() {
+        localStorage.setItem('cookiesAccepted', 'true');
+        document.getElementById('cookie-banner').style.display = 'none';
+    };
+
+    // Configurações de cookies
+    document.getElementById('settings-cookies').onclick = function() {
+        // Aqui você pode abrir um modal ou redirecionar para uma página de configurações
+        alert('Configurações de cookies não implementadas nesta demonstração.');
+    };
+</script>
+
+<style>
+    @media (max-width: 600px) {
+        #cookie-banner {
+            padding: 15px;
+        }
+
+        #cookie-banner p {
+            font-size: 1em;
+        }
+
+        #accept-cookies, #settings-cookies {
+            padding: 8px 15px;
+        }
+    }
+</style>
+
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="navbar-content">
-            <a href="index.html">Página Principal</a>
-            <a href="pagina2.html">Serviços Feitos</a>
-        </div>
-    </nav>
 
-    <!-- Cabeçalho -->
-    <header class="header-compact">
-        <img src="logo-retiblocos.png" alt="Logo Retiblocos">
+   <!-- Navbar -->
+<nav class="navbar" id="navbar">
+    <div class="navbar-content">
+        <a href="index.html">Página Principal</a>
+        <a href="pagina2.html">Serviços Feitos</a>
+    </div>
+</nav>
+
+    <!-- Cabeçalho e logo -->
+    <header class="content header-compact" id="sobre">
+        <img src="logo-retiblocos.png" alt="Retiblocos - Retífica Diesel Pesado">
         <p>Especialistas em Retífica Diesel Pesado - Caterpillar, Cummins, Volvo e Mercedes</p>
     </header>
 
-    <!-- Sobre -->
+    <!-- Seção de Sobre Nós -->
     <section class="content">
-        <h2>Quem Somos</h2>
-        <p>A Retiblocos é especializada em retífica de motores diesel pesados, com um time altamente qualificado para atender as necessidades de sua frota. Estamos localizados em Curitiba, com serviços rápidos e eficientes.</p>
+        <h2>Sobre Nós</h2>
+        <p>A Retiblocos atua desde 2007 na retífica de motores diesel pesado...</p>
     </section>
 
-    <!-- Marcas -->
-    <section class="marcas">
-        <h2>Marcas que trabalhamos</h2>
-        <img src="caterpillar-logo.png" alt="Caterpillar">
-        <img src="cummins-logo.png" alt="Cummins">
-        <img src="volvo-logo.png" alt="Volvo">
-        <img src="mercedes-logo.png" alt="Mercedes">
+    <!-- Seção de Marcas -->
+    <section class="content marcas" id="marcas">
+        <h2>Marcas</h2>
+        <div>
+            <img src="logo-caterpillar.png" alt="Caterpillar" class="img-grande">
+            <img src="logo-cummins.png" alt="Cummins">
+            <img src="logo-volvo.png" alt="Volvo" class="img-grande">
+            <img src="logo-mercedes.png" alt="Mercedes" class="img-grande">
+            <img src="scania.png" alt="Scania" class="media"> 
+        </div>
     </section>
 
-    <!-- Serviços -->
-    <section class="services">
-        <div class="service-item">
+    <!-- Seção de Serviços -->
+    <section class="content services" id="servicos">
+        <h2>Serviços</h2>
+        <a href="https://wa.me/554130859910" target="_blank" class="service-item">
             <h3>Retífica de Motores</h3>
-            <p>Realizamos a retificação de motores a diesel de diversos modelos e marcas, com garantia de qualidade e rapidez no serviço.</p>
-        </div>
-        <div class="service-item">
-            <h3>Remanufatura de Motores</h3>
-            <p>Oferecemos remanufatura de motores diesel, garantindo seu desempenho e durabilidade por mais tempo.</p>
-        </div>
-        <div class="service-item">
+            <p>Realizamos retífica completa de motores diesel com equipamentos de alta tecnologia.</p>
+        </a>
+        <a href="https://wa.me/554130859910" target="_blank" class="service-item">
             <h3>Venda de Peças</h3>
-            <p>Contamos com um vasto estoque de peças para motores diesel, com peças de alta qualidade para reposição.</p>
-        </div>
+            <p>Peças de reposição originais para Caterpillar, Cummins, Volvo e Mercedes.</p>
+        </a>
+        <a href="https://wa.me/554130859910" target="_blank" class="service-item">
+            <h3>Remanufatura</h3>
+            <p>Remanufatura de sistemas de injeção a diesel, garantindo eficiência.</p>
+        </a>
+        <a href="https://wa.me/554130859910" target="_blank" class="service-item">
+            <h3>Suporte Técnico</h3>
+            <p>Consultoria técnica especializada para diagnóstico e manutenção de motores.</p>
+        </a>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="mini-logo.png" alt="Logo Retiblocos">
-            </div>
-            <div class="footer-contact">
-                <p>Contato: <strong>(41) 99999-9999</strong></p>
-                <p>Email: <strong>contato@retiblocos.com.br</strong></p>
-            </div>
-            <div class="footer-links">
-                <a href="https://facebook.com/retiblocos" target="_blank">Facebook</a> | 
-                <a href="https://instagram.com/retiblocos" target="_blank">Instagram</a>
-            </div>
+    <!-- Seção de Localização com mapa ao vivo -->
+    <section class="content content-mapa" id="contato">
+        <h2>Localização</h2>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.491772847277!2d-49.27447842453193!3d-25.55530077748214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dcfb6f45c24819%3A0xdda8cabfb32e092!2sRetiblocos%20Recupera%C3%A7%C3%A3o%20De%20Pe%C3%A7as%20De%20Motores!5e0!3m2!1spt-BR!2sbr!4v1730910252407!5m2!1spt-BR!2sbr" 
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </section>
+
+    < <!-- Rodapé -->
+    <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-contact">
+            <h2>Contato</h2>
+            <ul class="footer-links">
+                <li>Fixo: <a href="https://wa.me/554130859910" target="_blank">(41) 3085-9910</a> (Erick, Gerente Adm)</li>
+                <li>Celular: <a href="https://wa.me/554130859910" target="_blank">(41) 99741-204</a> (Fernando, Proprietário)</li>
+                <li>Email: <a href="mailto:escritorio.retiblocos@hotmail.com">escritorio.retiblocos@hotmail.com</a></li>
+                <li>CNPJ: 53.659.638/0001-03</li>
+            </ul>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Retiblocos. Todos os direitos reservados.</p>
+            &copy; 2024 Retiblocos. All rights reserved. <br>
+            Website developed by Trentini
         </div>
-    </footer>
+        <div style="text-align: center; margin-top: 20px;">
+    <button id="easter-egg-btn" style="
+        background-color: #FF6600; 
+        color: white; 
+        border: none; 
+        padding: 10px 20px; 
+        border-radius: 5px; 
+        cursor: pointer; 
+        font-size: 1.1em; 
+        transition: transform 0.3s ease, background-color 0.3s ease;">
+        Surpresa!
+    </button>
+</div>
+        <img src="DECI.png" id="easter-egg-img" alt="Funcionário Deci" style="
+    display: none; 
+    width: 150px; 
+    height: auto; 
+    margin: 20px auto 0; 
+    border-radius: 50%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+    animation: none;">
 
-    <!-- WhatsApp Icon -->
-    <div class="whatsapp-icon" onclick="window.location.href='https://wa.me/5541999999999'"></div>
+    </div>
+</footer>
+            
+           <!-- Ícone flutuante do WhatsApp -->
+<a href="https://wa.me/554130859910" target="_blank" class="whatsapp-icon"></a>
+
+<!-- Imagem fixa do funcionário -->
+<img src="DECI.png" alt="Funcionário Deci" class="fixed-deci">
 
 </body>
 </html>
