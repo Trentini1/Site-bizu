@@ -1,148 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Retiblocos - Soluções em motores diesel com qualidade e confiança.">
-    <title>Retiblocos - Soluções em Motores Diesel</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* Estilos CSS otimizados e responsivos */
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background: #007bff;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        #hero {
-            background: url('hero-bg.jpg') no-repeat center center/cover;
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
-        }
-        #hero h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        #services {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 50px 20px;
-            background: #fff;
-        }
-        .service {
-            background: #007bff;
-            color: white;
-            padding: 20px;
-            border-radius: 8px;
-            width: 300px;
-            margin: 20px;
-            text-align: center;
-        }
-        #contact {
-            padding: 50px 20px;
-            background: #f4f4f4;
-        }
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background: #007bff;
-            color: white;
-        }
-        @media (max-width: 768px) {
-            #services {
-                flex-direction: column;
-                align-items: center;
-            }
-            .service {
-                width: 80%;
-            }
-        }
-    </style>
+    <title>Layout Criativo</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
-        <h1>Retiblocos</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#services">Serviços</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
-        </nav>
+
+    <header class="navbar">
+        <div class="navbar-content">
+            <a href="#home">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#contato">Contato</a>
+        </div>
     </header>
 
-    <section id="hero">
-        <h1>Expert Diesel Solutions</h1>
-        <p>Seu parceiro de confiança para reparo de motores</p>
-        <a href="#services" class="btn" style="background: white; color: #007bff; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Ver Serviços</a>
+    <section class="header-compact">
+        <img src="https://via.placeholder.com/1000x400" alt="Imagem de cabeçalho">
+        <p>Transforme seu futuro com design inovador e soluções criativas.</p>
     </section>
 
-    <section id="about">
-        <h2>Sobre Nós</h2>
-        <p>Especialistas em recondicionamento de motores diesel.</p>
-        <img src="engine.jpg" alt="Motor Diesel" style="width: 100%; max-width: 600px; border-radius: 8px;">
+    <section class="brand-section">
+        <div><img src="https://via.placeholder.com/200x100" alt="Marca 1"></div>
+        <div><img src="https://via.placeholder.com/200x100" alt="Marca 2"></div>
+        <div><img src="https://via.placeholder.com/200x100" alt="Marca 3"></div>
+        <div><img src="https://via.placeholder.com/200x100" alt="Marca 4"></div>
     </section>
 
-    <section id="services">
+    <section class="section" id="sobre">
+        <h2>Sobre o Projeto</h2>
+        <p>Este projeto é dedicado a transformar a experiência digital, com um design moderno e funcional. Utilizamos as últimas tendências de desenvolvimento para criar soluções que realmente fazem a diferença.</p>
+        <div class="card">
+            <h3>Foco em Inovação</h3>
+            <p>Nosso compromisso é com a inovação e a entrega de soluções criativas que agregam valor real aos nossos clientes.</p>
+        </div>
+        <div class="card">
+            <h3>Design Responsivo</h3>
+            <p>Com design responsivo, garantimos uma experiência de usuário impecável em todos os dispositivos.</p>
+        </div>
+    </section>
+
+    <section class="section" id="servicos">
         <h2>Serviços</h2>
-        <div class="service">
-            <h3>Revisão de Motores Diesel</h3>
-            <p>Serviço completo de revisão para motores diesel.</p>
+        <p>Oferecemos uma gama de serviços criativos, desde o design até a implementação completa de soluções digitais. Nossa missão é entregar resultados excepcionais para cada cliente.</p>
+        <div class="card">
+            <h3>Consultoria Digital</h3>
+            <p>Oferecemos consultoria especializada para alavancar seu negócio no mundo digital.</p>
         </div>
-        <div class="service">
-            <h3>Diagnóstico de Motores</h3>
-            <p>Diagnóstico preciso para identificar problemas.</p>
-        </div>
-        <div class="service">
-            <h3>Reparo de Sistemas de Combustível</h3>
-            <p>Reparo e manutenção de sistemas de combustível.</p>
+        <div class="card">
+            <h3>Desenvolvimento Web</h3>
+            <p>Desenvolvimento de sites e sistemas personalizados que atendem às necessidades específicas do seu negócio.</p>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contato</h2>
-        <form>
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Mensagem:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-        <p>Localização: Rua Exemplo, 123 - Cidade, Estado</p>
-        <p>Email: contato@retiblocos.com</p>
-        <p>Horário de funcionamento: Seg - Sex: 8h - 18h</p>
+    <section class="section" id="contato">
+        <h2>Entre em Contato</h2>
+        <p>Estamos sempre à disposição para ajudá-lo. Entre em contato conosco para mais informações sobre nossos serviços ou para uma consulta gratuita.</p>
+        <button class="button">Fale Conosco</button>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Retiblocos. Todos os direitos reservados.</p>
+    <footer class="footer">
+        <p>&copy; 2024 Seu Nome ou Empresa. Todos os direitos reservados.</p>
+        <a href="mailto:contato@seudominio.com">contato@seudominio.com</a>
     </footer>
+
 </body>
+
 </html>
