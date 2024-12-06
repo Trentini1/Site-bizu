@@ -1,73 +1,219 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout Criativo</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <title>Retiblocos - Retífica Diesel Pesado</title>
+    <link rel="icon" href="mini-logo.png" type="image/png">
+    <meta name="description" content="Retífica diesel rápida e barata em Curitiba. Especialistas em motores Caterpillar, Cummins, Volvo e Mercedes.">
+    <meta name="keywords" content="retífica diesel, retífica de motores, retífica em Curitiba, serviços de retífica, retífica barata, retífica rápida">
+    <meta name="robots" content="index, follow">
+    <style>
+        /* Paleta de cores */
+        :root {
+            --azul-claro: #00bcd4;
+            --laranja-escuro: #ff5722;
+            --cinza-claro: #e0e0e0;
+            --preto-escuro: #212121;
+            --branco: #fff;
+        }
 
+        /* Reset básico */
+        body, h1, h2, h3, p, a {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: var(--preto-escuro);
+        }
+
+        body {
+            background-color: var(--cinza-claro);
+            line-height: 1.6;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        /* Navegação */
+        nav {
+            background-color: var(--azul-claro);
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        nav a {
+            color: var(--branco);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--laranja-escuro);
+        }
+
+        /* Cabeçalho */
+        .header {
+            background: url('fundo-site.jpg') no-repeat center center/cover;
+            height: 100vh;
+            color: var(--branco);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+        }
+
+        /* Seção sobre */
+        .sobre {
+            background-color: var(--branco);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .sobre h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* Seção serviços */
+        .servicos {
+            background-color: var(--cinza-claro);
+            padding: 60px 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .servicos h3 {
+            font-size: 1.8rem;
+            color: var(--laranja-escuro);
+            margin-bottom: 10px;
+        }
+
+        .servicos .card {
+            background-color: var(--branco);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .servicos .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .servicos .card p {
+            color: var(--preto-escuro);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--preto-escuro);
+            color: var(--branco);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--azul-claro);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .servicos {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            nav {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .servicos {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
 <body>
 
-    <header class="navbar">
-        <div class="navbar-content">
-            <a href="#home">Início</a>
-            <a href="#sobre">Sobre</a>
-            <a href="#servicos">Serviços</a>
-            <a href="#contato">Contato</a>
-        </div>
+    <!-- Navbar -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <!-- Cabeçalho -->
+    <header class="header" id="home">
+        <h1>Retiblocos - Retífica Diesel Pesado</h1>
+        <p>Especialistas em motores Caterpillar, Cummins, Volvo e Mercedes</p>
     </header>
 
-    <section class="header-compact">
-        <img src="https://via.placeholder.com/1000x400" alt="Imagem de cabeçalho">
-        <p>Transforme seu futuro com design inovador e soluções criativas.</p>
+    <!-- Seção sobre -->
+    <section class="sobre" id="sobre">
+        <h2>Sobre Nós</h2>
+        <p>Somos especializados na retífica de motores diesel pesados, com mais de 15 anos de experiência no mercado. Nossa missão é garantir a qualidade e a performance dos motores Caterpillar, Cummins, Volvo e Mercedes.</p>
     </section>
 
-    <section class="brand-section">
-        <div><img src="https://via.placeholder.com/200x100" alt="Marca 1"></div>
-        <div><img src="https://via.placeholder.com/200x100" alt="Marca 2"></div>
-        <div><img src="https://via.placeholder.com/200x100" alt="Marca 3"></div>
-        <div><img src="https://via.placeholder.com/200x100" alt="Marca 4"></div>
-    </section>
-
-    <section class="section" id="sobre">
-        <h2>Sobre o Projeto</h2>
-        <p>Este projeto é dedicado a transformar a experiência digital, com um design moderno e funcional. Utilizamos as últimas tendências de desenvolvimento para criar soluções que realmente fazem a diferença.</p>
+    <!-- Seção de serviços -->
+    <section class="servicos" id="servicos">
         <div class="card">
-            <h3>Foco em Inovação</h3>
-            <p>Nosso compromisso é com a inovação e a entrega de soluções criativas que agregam valor real aos nossos clientes.</p>
+            <h3>Retífica de Motores</h3>
+            <p>Realizamos retífica de motores com equipamentos de alta tecnologia para garantir máxima performance e durabilidade.</p>
         </div>
         <div class="card">
-            <h3>Design Responsivo</h3>
-            <p>Com design responsivo, garantimos uma experiência de usuário impecável em todos os dispositivos.</p>
+            <h3>Venda de Peças</h3>
+            <p>Oferecemos peças originais e de alta qualidade para os principais modelos de motores diesel.</p>
+        </div>
+        <div class="card">
+            <h3>Suporte Técnico</h3>
+            <p>Consultoria especializada para diagnóstico e manutenção preventiva de motores diesel pesados.</p>
         </div>
     </section>
 
-    <section class="section" id="servicos">
-        <h2>Serviços</h2>
-        <p>Oferecemos uma gama de serviços criativos, desde o design até a implementação completa de soluções digitais. Nossa missão é entregar resultados excepcionais para cada cliente.</p>
-        <div class="card">
-            <h3>Consultoria Digital</h3>
-            <p>Oferecemos consultoria especializada para alavancar seu negócio no mundo digital.</p>
-        </div>
-        <div class="card">
-            <h3>Desenvolvimento Web</h3>
-            <p>Desenvolvimento de sites e sistemas personalizados que atendem às necessidades específicas do seu negócio.</p>
-        </div>
-    </section>
-
-    <section class="section" id="contato">
-        <h2>Entre em Contato</h2>
-        <p>Estamos sempre à disposição para ajudá-lo. Entre em contato conosco para mais informações sobre nossos serviços ou para uma consulta gratuita.</p>
-        <button class="button">Fale Conosco</button>
-    </section>
-
-    <footer class="footer">
-        <p>&copy; 2024 Seu Nome ou Empresa. Todos os direitos reservados.</p>
-        <a href="mailto:contato@seudominio.com">contato@seudominio.com</a>
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Retiblocos. Todos os direitos reservados.</p>
+        <p><a href="mailto:escritorio.retiblocos@hotmail.com">escritorio.retiblocos@hotmail.com</a></p>
+        <p><a href="https://wa.me/554130859910" target="_blank">Entre em contato via WhatsApp</a></p>
     </footer>
 
 </body>
-
 </html>
