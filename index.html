@@ -16,8 +16,10 @@
             --amarelo-claro: #FFCC33;
             --vermelho: #CC3333;
             --branco: #FFFFFF;
-            --cinza: #f2f2f2;
+            --cinza-claro: #f2f2f2;
             --preto-transparente: rgba(0, 0, 0, 0.7);
+            --cinza-escuro: #333;
+            --cinza-media: #666;
         }
 
         /* Estilo global */
@@ -28,7 +30,8 @@
             background: url('fundo-site.jpg') no-repeat center center fixed;
             background-size: cover;
             background-blend-mode: overlay;
-            color: #FFFFFF;
+            color: var(--branco);
+            line-height: 1.6;
         }
 
         /* Navbar */
@@ -59,7 +62,7 @@
 
         .navbar a:hover {
             background-color: rgba(255, 102, 0, 0.3);
-            color: white;
+            color: var(--branco);
         }
 
         /* Seção do cabeçalho */
@@ -68,18 +71,22 @@
             padding: 50px 20px;
             background: rgba(255, 255, 255, 0.4);
             border-radius: 15px;
-            margin-top: 80px;
+            margin-top: 100px;
+            animation: slideIn 1.2s ease-out;
         }
 
         .header-compact img {
             max-width: 100%;
             width: 450px;
             margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
 
         .header-compact p {
             font-size: 1.2em;
             color: var(--laranja);
+            margin-top: 20px;
         }
 
         /* Seção Sobre Nós */
@@ -94,15 +101,21 @@
             animation: fadeIn 2s ease-out;
         }
 
+        h2 {
+            font-size: 2em;
+            color: var(--laranja);
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: var(--cinza-claro);
+        }
+
         /* Animação de FadeIn */
         @keyframes fadeIn {
             0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
-        }
-
-        h2 {
-            font-size: 2em;
-            color: var(--laranja);
         }
 
         /* Seção Marcas */
@@ -110,13 +123,13 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
+            gap: 30px;
+            margin-top: 30px;
         }
 
         .marcas img {
-            width: 120px;
-            height: 120px;
+            width: 130px;
+            height: 130px;
             object-fit: contain;
             transition: transform 0.3s ease;
             border-radius: 10px;
@@ -138,13 +151,14 @@
         }
 
         .service-item {
-            background: var(--cinza);
+            background: var(--cinza-claro);
             padding: 30px;
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
             cursor: pointer;
+            overflow: hidden;
         }
 
         .service-item h3 {
@@ -154,7 +168,7 @@
         }
 
         .service-item p {
-            color: #333;
+            color: var(--cinza-escuro);
             font-size: 1.1em;
         }
 
@@ -189,7 +203,7 @@
         }
 
         footer .footer-content .footer-links a {
-            color: #FF6600;
+            color: var(--laranja);
             text-decoration: none;
         }
 
@@ -220,23 +234,6 @@
             transform: scale(1.1);
         }
 
-        /* Imagem fixa */
-        .fixed-deci {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-            z-index: 999;
-            transition: transform 0.3s ease;
-        }
-
-        .fixed-deci:hover {
-            transform: scale(1.05);
-        }
-
     </style>
 </head>
 <body>
@@ -254,7 +251,7 @@
         <p>Especialistas em Retífica Diesel Pesado - Caterpillar, Cummins, Volvo e Mercedes</p>
     </header>
 
-        <!-- Sobre -->
+    <!-- Sobre -->
     <section class="content">
         <h2>Quem Somos</h2>
         <p>A Retiblocos é especializada em retífica de motores diesel pesados, com um time altamente qualificado para atender as necessidades de sua frota. Estamos localizados em Curitiba, com serviços rápidos e eficientes.</p>
@@ -263,17 +260,14 @@
     <!-- Marcas -->
     <section class="marcas">
         <h2>Marcas que trabalhamos</h2>
-        <div class="marcas">
-            <img src="caterpillar-logo.png" alt="Caterpillar">
-            <img src="cummins-logo.png" alt="Cummins">
-            <img src="volvo-logo.png" alt="Volvo">
-            <img src="mercedes-logo.png" alt="Mercedes">
-        </div>
+        <img src="caterpillar-logo.png" alt="Caterpillar">
+        <img src="cummins-logo.png" alt="Cummins">
+        <img src="volvo-logo.png" alt="Volvo">
+        <img src="mercedes-logo.png" alt="Mercedes">
     </section>
 
     <!-- Serviços -->
     <section class="services">
-        <h2>Serviços</h2>
         <div class="service-item">
             <h3>Retífica de Motores</h3>
             <p>Realizamos a retificação de motores a diesel de diversos modelos e marcas, com garantia de qualidade e rapidez no serviço.</p>
@@ -311,7 +305,5 @@
     <!-- WhatsApp Icon -->
     <div class="whatsapp-icon" onclick="window.location.href='https://wa.me/5541999999999'"></div>
 
-    <!-- Imagem fixa -->
-    <img src="deci-image.jpg" alt="Imagem Deci" class="fixed-deci">
 </body>
 </html>
